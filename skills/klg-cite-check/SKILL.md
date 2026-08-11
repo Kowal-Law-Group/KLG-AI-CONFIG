@@ -179,11 +179,14 @@ filing.
 
 ### Step A.6: Generate Westlaw Pull List
 
-Produce a paste-ready list of all case citations requiring
-Westlaw verification, organized by priority:
+Produce two things, in this order. Do not merge them — they
+serve different purposes and different formats.
+
+**1. The attorney-review list.** Organized by priority, with
+case names and flag reasons so a human can act on it:
 
 ```
-WESTLAW FIND & PRINT LIST
+WESTLAW PULL LIST — ATTORNEY REVIEW
 Brief: [title]
 Date: [date]
 Total authorities to verify: [N]
@@ -201,9 +204,23 @@ Total authorities to verify: [N]
 2. ...
 ```
 
-Format the list so it can be pasted directly into Westlaw's
-Find & Print search box (one citation per line, full citation
-format).
+**2. The paste-ready Find & Print list.** This is what
+actually goes into Westlaw's Find & Print search box, and it
+is NOT the list above with the labels stripped off. Format
+per the same rule as `klg-research-compilation` Rule 5 —
+bare reporter cite only, one per line, deduplicated across
+all three priority tiers, nothing else:
+
+```
+19 Cal.2d 807
+11 Cal.App.5th 626
+579 U.S. 197
+```
+
+No case names, no years, no pincites, no parentheticals, no
+priority labels, no headers. Westlaw's Find & Print rejects
+anything else. Deduplicate before printing — the same
+citation may appear in more than one priority tier above.
 
 ### Step A.7: Produce Phase A Audit Report
 

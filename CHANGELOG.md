@@ -5,6 +5,21 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.2.0] — 2026-08-11
+
+### Changed
+- `klg-cite-check` Step A.6 ("Generate Westlaw Pull List") — split the single
+  output into two explicit lists. The attorney-review list (case names, flag
+  reasons, priority tiers) stays as-is. Added a second, separate paste-ready
+  Find & Print list in the correct bare-reporter-cite format (volume/reporter/
+  page only, no case names, years, pincites, or parentheticals, one per line,
+  deduplicated across tiers) — matching `klg-research-compilation` Rule 5.
+  Fixes the AI OS Improvement Backlog's "Honor Westlaw Find & Print format"
+  item (Urgent; recurred on the Diller v. Weiss filing-day cite-check). The
+  companion global `claude.md` rule from that same backlog entry is not done
+  here — still blocked on Task 1's claude.md-source gap — so ad hoc sessions
+  outside a skill invocation aren't covered yet by this fix alone.
+
 ## [0.1.0] — 2026-08-11
 
 Initial import. Repo created as Task 1 of the "AI OS — Edwyn delegation
