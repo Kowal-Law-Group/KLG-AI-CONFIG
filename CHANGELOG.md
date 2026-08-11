@@ -5,6 +5,13 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.3.1] — 2026-08-11
+
+### Changed
+- README: added the real GitHub URL (https://github.com/Stuarth128/KLG-AI-CONFIG,
+  created by Edwyn) and push instructions, since this session still has no
+  push access and every update ships as a zip for Edwyn to push himself.
+
 ## [0.3.0] — 2026-08-11
 
 ### Added
