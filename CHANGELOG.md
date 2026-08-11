@@ -5,6 +5,15 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.2.1] — 2026-08-11
+
+### Added
+- `PENDING_CLAUDE_MD_CHANGES.md` — staging file for backlog items whose fix
+  is a claude.md rule addition, so they land as one clean commit once the
+  real claude.md is available instead of piecemeal edits. Seeded with two
+  Urgent items: the Westlaw Find & Print ad hoc-session rule, and "Never CC
+  clients on emails to opposing counsel" ([backlog entry](https://app.notion.com/p/3670fc06a06c817fb9a3e6436b438847)).
+
 ## [0.2.0] — 2026-08-11
 
 ### Changed
