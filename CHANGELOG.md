@@ -5,6 +5,21 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.3.0] — 2026-08-11
+
+### Added
+- New skill `klg-filing-preflight` — seven-gate final pre-filing checklist
+  for writs and emergency applications (record completeness, required
+  declarations, immediate stay showing, writ-worthiness, cover-page
+  mechanics, redaction/sealing consistency, document hygiene), plus a
+  `scripts/page_span_audit.py` helper for the Gate 1 mechanical page-span
+  check. Built fresh from the backlog entry's spec — the August 2 draft
+  SKILL.md referenced in that entry was not available in this session, so
+  this build has not been reconciled against it. Two `[VERIFY]` items
+  flagged inside the skill itself: the rule 8.486 citations carried over
+  from the backlog entry, unconfirmed here. Fixes the AI OS Improvement
+  Backlog's "New skill: klg-filing-preflight" item (Urgent).
+
 ## [0.2.1] — 2026-08-11
 
 ### Added
