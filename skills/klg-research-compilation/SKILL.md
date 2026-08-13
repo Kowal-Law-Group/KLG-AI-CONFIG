@@ -1,6 +1,6 @@
 ---
 name: klg-research-compilation
-description: "Compile Deep Research memos into a single research memorandum, extract authorities for Westlaw verification, and finalize the research package. Use whenever the user says 'compile the research memos', 'research memos are ready', 'extract authorities', 'compile and extract', 'process the research', 'finalize the research package', 'Westlaw authorities are downloaded', 'finalize the research', 'post-pipeline review', 'research pipeline is complete', or 'run the post-pipeline review'. This is Steps 4-5 of the KLG Research Pipeline (Phase A: compile + extract; Phase B: finalize after Westlaw; Post-Pipeline Review: strategic analysis after William completes the mechanical pipeline). Also triggers when the user completed deep research prompts and returns with completed memos. Produces a compiled .docx research memo with convergence analysis, a paste-ready Westlaw authority list, and a final PDF research package. Do NOT use for case assessments, response plans, or research prompt generation (Step 1)."
+description: "Compile Deep Research memos into a single research memorandum, extract authorities for Westlaw verification, and finalize the research package. Use whenever the user says 'compile the research memos', 'research memos are ready', 'extract authorities', 'compile and extract', 'process the research', 'finalize the research package', 'Westlaw authorities are downloaded', 'finalize the research', 'post-pipeline review', 'research pipeline is complete', or 'run the post-pipeline review'. This is Steps 4-5 of the KLG Research Pipeline (Phase A: compile + extract; Phase B: finalize after Westlaw; Post-Pipeline Review: strategic analysis after the assigned runner completes the mechanical pipeline). Also triggers when the user completed deep research prompts and returns with completed memos. Produces a compiled .docx research memo with convergence analysis, a paste-ready Westlaw authority list, and a final PDF research package. Do NOT use for case assessments, response plans, or research prompt generation (Step 1)."
 ---
 
 # KLG Research Compilation & Authority Extraction
@@ -21,15 +21,21 @@ research package for the matter file.
 
 This is Steps 4–5 of the KLG Research Pipeline:
 1. Skill 3 generated research prompts into a Notion page
-2. William ran Comet Deep Research and pasted results back into Notion
+2. The assigned runner (William, Edwyn, or someone else) ran Comet
+   Deep Research and pasted results back into Notion
 3. (Comet completed — memos are on the Notion page)
 4. **THIS SKILL (Phase A)** → Read Notion, compile, extract authorities
-   → William runs Comet Westlaw Find & Print
+   → The runner runs Comet Westlaw Find & Print
 5. **THIS SKILL (Phase B)** → Finalize research package
-   → William notifies Tim with the completed package
+   → The runner notifies Tim with the completed package
 
-**William runs both phases.** Tim re-enters only after the final
-package is delivered.
+**The assigned runner runs both phases.** Tim re-enters only after
+the final package is delivered. The runner defaults to William
+(matching Skill 3's default) unless the user specifies otherwise
+or context makes clear a different runner (e.g., Edwyn) is doing
+the mechanical pipeline. Tim's role — post-pipeline strategic
+review — does not change regardless of who ran the mechanical
+steps.
 
 ## Required Context
 
@@ -93,8 +99,8 @@ Case B's research simultaneously.
     Skip to Step 6 (post-pipeline review). Read the Notion page
     to get the compilation data, then present the high-leverage
     findings and multiple-choice options. This entry point is
-    used when William ran Phases A–B and Tim is picking up the
-    strategic review.
+    used when the assigned runner ran Phases A–B and Tim is
+    picking up the strategic review.
 
 ---
 
@@ -465,9 +471,9 @@ high-leverage findings, or recursive research at this point.
 Those questions are strategic attorney decisions that belong
 in the post-pipeline review — which runs either at the end of
 Phase B (if Tim is running this session) or in a separate Tim
-session (if William ran the mechanical pipeline). Either way,
-the user needs to go run Comet right now — do not delay them
-with questions.
+session (if the assigned runner ran the mechanical pipeline).
+Either way, the user needs to go run Comet right now — do not
+delay them with questions.
 
 ---
 
@@ -637,17 +643,23 @@ Present the completion summary in plain text (NOT in a code block):
 verified via Westlaw, [N] confirmed hallucinations removed.
 The final research package and Notion page have been updated."
 
-**Determine whether Tim or William is running this session.**
-The simplest signal: if this session was started by pasting the
-compilation prompt from the Comet completion message (i.e., the
-research pipeline was delegated to William), then William is
-running this session. If the user is Tim (identified by context,
-prior messages, or explicit statement), proceed directly to
-Step 6 as before.
+**Determine whether Tim or the assigned runner is running this
+session.** The simplest signal: if this session was started by
+pasting the compilation prompt from the Comet completion message
+(i.e., the research pipeline was delegated to a runner — William
+by default, or Edwyn or someone else if specified earlier in the
+pipeline), then that runner is running this session. If the user
+is Tim (identified by context, prior messages, or explicit
+statement), proceed directly to Step 6 as before.
 
-**If William is running this session:**
+If it's unclear who the runner was (e.g., no earlier context
+carried the assignee forward), ask: "Is this Tim picking up the
+post-pipeline review, or is this the runner (William, Edwyn, or
+someone else) closing out the mechanical pipeline?"
 
-Present the Slack notification for William to post (or offer
+**If a runner (not Tim) is running this session:**
+
+Present the Slack notification for the runner to post (or offer
 to post it via the Slack connector):
 
 "The mechanical pipeline is done. The post-pipeline review
@@ -655,10 +667,11 @@ to post it via the Slack connector):
 recursive research) is Tim's call. Let me notify him."
 
 Post (or offer to post) via the Slack connector to the
-matter channel:
+matter channel, substituting the runner's name and the Slack
+ID reference table below:
 
 ```
-This is Claude posting on William's behalf.
+This is Claude posting on [Runner Name]'s behalf.
 
 *RESEARCH PIPELINE COMPLETE — [Case Short Name]*
 
@@ -685,11 +698,23 @@ The Notion page is: [Notion page URL]
 Please run the post-pipeline review."
 ```
 
-If the user (William) confirms, post via the Slack connector
-to the matter channel. If no matter channel exists, DM Tim.
+The `<@U07PYJDNGT0>` mention stays fixed on Tim regardless of
+who ran the pipeline — Tim is always the post-pipeline reviewer,
+that role doesn't change with the runner.
 
-**STOP HERE if William is running this session.** Do not
-proceed to Step 6. The post-pipeline review runs when Tim
+### Runner Slack IDs (quick reference)
+
+| Runner | Slack ID |
+|---|---|
+| William Hernandez (default) | U097FMSH3V4 |
+| Edwyn Sierra | U0AS9KZQ69X |
+| Tim Kowal | U07PYJDNGT0 |
+
+If the runner confirms, post via the Slack connector to the
+matter channel. If no matter channel exists, DM Tim.
+
+**STOP HERE if a runner (not Tim) is running this session.** Do
+not proceed to Step 6. The post-pipeline review runs when Tim
 opens a new Chat and pastes the prompt from the Slack message.
 
 **If Tim is running this session:**
@@ -834,10 +859,10 @@ If the user selects additional research (option 4a or 4b):
     archival) are presented ONCE as a single multiple-choice
     interaction. NEVER ask these questions during Phase A or
     at the Westlaw handoff point. If Tim is running this
-    session, present them at the end of Phase B. If William
-    ran the mechanical pipeline, these questions are deferred
-    to Tim's post-pipeline review session (triggered
-    separately).
+    session, present them at the end of Phase B. If a runner
+    (William, Edwyn, or someone else) ran the mechanical
+    pipeline, these questions are deferred to Tim's
+    post-pipeline review session (triggered separately).
 14. The Comet prompt at the Westlaw handoff MUST be in its own
     standalone code block with no other content. The user will
     copy-paste it directly into Comet. Do not mix it with

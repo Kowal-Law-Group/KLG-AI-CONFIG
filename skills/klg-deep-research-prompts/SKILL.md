@@ -821,6 +821,7 @@ completed today if possible. The opposition is due [date]."]
 | Runner | Slack ID |
 |---|---|
 | William Hernandez (default) | U097FMSH3V4 |
+| Edwyn Sierra | U0AS9KZQ69X |
 | Tim Kowal | U07PYJDNGT0 |
 | Brittney Bishop | U09EKSYTF6K |
 | Ted Davis | U09EKSXH7GX |
