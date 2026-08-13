@@ -5,6 +5,27 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.4.0] — 2026-08-13
+
+### Changed
+- `klg-deep-research-prompts` — added Edwyn Sierra's Slack ID
+  (U0AS9KZQ69X) to the runner routing table. The assignee logic itself
+  was already generic; this table was the one gap.
+- `klg-research-compilation` — generalized the hardcoded Tim/William
+  binary throughout (Purpose section, Interaction Rules, Step 5 Final
+  Handoff logic, the Slack notification template, Execution Rule 13)
+  so any assigned runner works, not just William. Tim stays fixed as
+  the post-pipeline reviewer role regardless of who ran the mechanical
+  pipeline. Added a Runner Slack ID reference table matching
+  `klg-deep-research-prompts`.
+- Fixes the AI OS Improvement Backlog's ["Update research pipeline to
+  support Edwyn as runner"](https://app.notion.com/p/3590fc06a06c81e3886ec2069ba458b6)
+  item (Important). **Correction:** this item was marked Done in
+  Notion, but verification against the actual skill files found
+  `klg-research-compilation` had not been touched at all — the Notion
+  status was stale. Corrected here; see the item's page for the
+  updated status.
+
 ## [0.3.1] — 2026-08-11
 
 ### Changed
