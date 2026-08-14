@@ -5,6 +5,26 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.4.1] — 2026-08-14
+
+### Verified
+- Confirmed the `klg-deep-research-prompts` and `klg-research-compilation`
+  fixes from 0.4.0 are live on the actual org skills, not just this repo.
+  Initial confusion during verification (Claude's `ListSkills` tool briefly
+  showed two IDs per skill name) turned out to be a session-side artifact,
+  not a real duplicate — Edwyn confirmed via the org's Skills admin console
+  that each skill has exactly one entry, and it now carries the corrected
+  language. No further action needed on this item.
+
+### Flagged (not fixed here)
+- `klg-daily-triage` still has several William-only references (report
+  framing at line ~107, default-mode language at ~109, ID lookups at
+  ~349/354, report-mode framing at ~363/372) that assume William is the one
+  running/reporting the research pipeline. This was called out as "Also
+  related" on the backlog item ["Update research pipeline to support Edwyn
+  as runner"](https://app.notion.com/p/3590fc06a06c81e3886ec2069ba458b6),
+  but wasn't one of that item's named target skills — needs its own pass.
+
 ## [0.4.0] — 2026-08-13
 
 ### Changed
