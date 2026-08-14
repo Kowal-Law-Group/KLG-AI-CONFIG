@@ -5,6 +5,20 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.4.2] — 2026-08-14
+
+### Verified
+- Confirmed `klg-cite-check`'s Step A.6 fix (v0.2.0 — split attorney-review
+  list vs. bare-cite Find & Print list) is now live on the org skill.
+  Before replacing, confirmed the live copy was stale — unchanged for
+  ~3 months, predating the fix — same repo-vs-org gap pattern as
+  0.4.1. Edwyn replaced it directly via the org's Skills admin console.
+  Partially closes the AI OS Improvement Backlog's ["Honor Westlaw Find &
+  Print format"](https://app.notion.com/p/3650fc06a06c81b09fd3f4dd54d12b1e)
+  item (Urgent) — the skill-level half. The global `claude.md` half is
+  still blocked on real `claude.md` content (see
+  `PENDING_CLAUDE_MD_CHANGES.md`).
+
 ## [0.4.1] — 2026-08-14
 
 ### Verified
