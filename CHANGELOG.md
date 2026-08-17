@@ -5,6 +5,17 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.5.1] — 2026-08-17
+
+### Verified
+- `klg-filing-preflight` — cleared the `[VERIFY]` flag on the rule 8.486
+  citations. Confirmed (b)(4), (b)(2), and (c)(2) against the current
+  rule text at courts.ca.gov: (b)(4) authorizes summary denial with no
+  cure period when the record or an exigency showing is missing; (c)(2)'s
+  five-day cure applies only to (c)(1) formatting defects, not missing
+  or substantively deficient content. This commit was cut earlier but
+  never actually landed — catching that now.
+
 ## [0.5.0] — 2026-08-17
 
 ### Added

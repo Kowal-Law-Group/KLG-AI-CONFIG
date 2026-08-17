@@ -12,10 +12,12 @@ the ADF surrogacy matter (B355938 / B356109) for record inadequacy —
 neither reached the merits. Rule 8.486(b)(4) permits summary denial for
 an incomplete record with no notice-and-cure obligation, and the five-day
 cure right in rule 8.486(c)(2) reaches only the form of supporting
-documents, not their content. **[VERIFY: confirm current text and
-subdivision numbering of rule 8.486 before relying on these citations —
-carried over from the backlog entry that spawned this skill, not
-independently confirmed in this session.]** There is no second chance
+documents, not their content — confirmed against the current rule text
+at courts.ca.gov (August 2026): (b)(4) authorizes summary denial when the
+petition lacks the required record or a sufficient exigency showing,
+with no cure period attached; (c)(2)'s five-day cure applies only to
+documents that fail the formatting requirements in (c)(1), not to
+missing or substantively deficient content. There is no second chance
 built into the rule, so the firm needs one of its own: a final,
 mechanical gate that runs after substantive review and citation
 verification are already done, immediately before attorney sign-off.
@@ -217,9 +219,8 @@ attorney can locate and fix it without re-running the gate. Close with:
 - **Fix list**, ordered by how likely each defect is to cause a summary
   denial (record completeness and required-declaration defects first;
   document-hygiene defects last).
-- Any `[VERIFY]` items — including the rule 8.486 citations flagged
-  above — collected in one list so the attorney can clear them before
-  relying on this skill's output as final.
+- Any `[VERIFY]` items surfaced during this run — collected in one list
+  so the attorney can clear them before relying on this skill's output.
 
 ## Execution rules
 
