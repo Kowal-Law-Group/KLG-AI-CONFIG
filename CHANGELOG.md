@@ -5,6 +5,17 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.5.2] — 2026-08-17
+
+### Changed
+- README: repo confirmed pushed to GitHub through v0.5.1 (full history,
+  all tags). Updated the GitHub URL — GitHub reported the repo moved
+  from `Stuarth128/KLG-AI-CONFIG` (personal account) to the firm org,
+  `Kowal-Law-Group/KLG-AI-CONFIG` — and rewrote the push instructions to
+  use `git remote set-url` pointed at the new location instead of the
+  old first-push merge instructions, which are no longer needed now that
+  a real push has landed.
+
 ## [0.5.1] — 2026-08-17
 
 ### Verified

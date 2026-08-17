@@ -68,7 +68,7 @@ table, etc.) is still the v0.1.0 placeholder. Same gap as before:
 
 ## Related
 
-- GitHub: https://github.com/Stuarth128/KLG-AI-CONFIG
+- GitHub: https://github.com/Kowal-Law-Group/KLG-AI-CONFIG (moved from Stuarth128/KLG-AI-CONFIG)
 - Delegation batch project: https://app.notion.com/p/3b80fc06a06c81e2a8e4da5205f88c58
 - Backlog entry (this task): https://app.notion.com/p/35b0fc06a06c8187886bdc40e49f0a79
 - klg-ai-os (Alfred/Bloodhound app): https://github.com/edwyn128/klg-ai-os
@@ -78,24 +78,21 @@ table, etc.) is still the v0.1.0 placeholder. Same gap as before:
 The Cowork session that builds this repo has no push access to GitHub —
 confirmed by a direct push attempt, rejected by GitHub's proxy with "not
 in this session's authorized repository set." So every update ships to
-Edwyn as a `.zip` with full git history, and he pushes it. The remote
-repo was created with an auto-generated `README.md` on `main`, which is
-unrelated history to this repo's `master` branch, so the first push needs
-one of:
+Edwyn as a `.zip` with full git history, and he pushes it from his own
+machine.
+
+**Repo location moved.** It was originally created at
+`github.com/Stuarth128/KLG-AI-CONFIG` (personal account) and has since
+been transferred to the firm org: `github.com/Kowal-Law-Group/KLG-AI-CONFIG`.
+GitHub redirects pushes to the old URL automatically, but point the local
+remote at the real location going forward:
 
 ```bash
-# unzip the delivered archive, then from inside klg-ai-config/:
-git remote add origin https://github.com/Stuarth128/KLG-AI-CONFIG.git
-
-# Option A — replace the placeholder README with this repo's real history
-# (recommended; the auto-generated README has no content worth keeping):
-git push origin master:main --force --tags
-
-# Option B — keep both histories (merge commit, more history noise):
-git fetch origin main
-git merge origin/main --allow-unrelated-histories -m "merge: initial GitHub README"
+git remote set-url origin https://github.com/Kowal-Law-Group/KLG-AI-CONFIG.git
 git push origin master:main --tags
 ```
 
-Every later update is a normal `git pull` + apply the new zip's commits
-(or just `git push --tags` again from the updated local clone Claude sends).
+History through v0.5.1 is live on `main` as of 2026-08-17. For a fresh
+clone (no existing `origin`), use `git remote add origin` instead of
+`set-url`. Every later update is a normal `git push --tags` from the
+updated local clone Claude sends.
