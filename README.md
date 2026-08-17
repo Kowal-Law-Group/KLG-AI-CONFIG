@@ -19,8 +19,8 @@ reviewable as clean, isolated diffs.
 ## What's in here
 
 ```
-claude.md                      Global behavioral rules (STATUS: placeholder, see below)
-klg-context.md                 Firm/team/matter context file (STATUS: placeholder, see below)
+claude.md                      Global behavioral rules (real file, landed 2026-08-17)
+klg-context.md                 Firm/team/matter context file (STATUS: still a placeholder, see below)
 klg-skill-navigator-final.md   Skill Navigator data (seeded from a 2026-03-16 Notion export — STALE, see note in file)
 klg-shared-scripts/            Shared utility scripts (fix_docx_standalone.py, etc.)
 skills/<skill-name>/SKILL.md   One folder per KLG-authored skill
@@ -34,30 +34,29 @@ cowork-plugin-management) are intentionally excluded — they aren't
 firm-authored and aren't what the backlog item is protecting against
 uncontrolled edits.
 
-## STATUS: claude.md and klg-context.md are placeholders
+## STATUS: claude.md landed; klg-context.md is still a placeholder
 
-I could not locate a single authoritative current copy of the full
-`claude.md` or `klg-context.md` text anywhere I have access to in this
-session:
+`claude.md` is now the real file — Tim's August 15, 2026 working copy,
+supplied by Edwyn from his OneDrive on 2026-08-17. It replaces the
+placeholder seeded in v0.1.0. Two things worth knowing about this pass:
 
-- The org-level AI instructions injected into my own Cowork session are
-  much shorter than the ~2,245-line `claude.md` referenced in the
-  2026-06-17 Config Archive Notion page, and don't contain sections that
-  page and other backlog entries clearly describe (Slack Posting Rules /
-  Team Slack User ID table, Connector Preflight Check, Handoff Message
-  Structure, Iterative Work Product — Notion First, etc.). So the two are
-  not the same file.
-- The Notion "Config Archive — 2026-06-17 pre-drafting-sweep snapshot" page
-  only *describes* a snapshot — the actual 2,245-line file was delivered to
-  Tim directly as `claude.md.pre-sweep-snapshot-2026-06-17.md` outside
-  Notion. I don't have access to that delivery.
-- `klg-context.md` isn't quoted in full anywhere I could find either.
+- The source file was a docx-to-markdown export with markdown special
+  characters backslash-escaped and blank lines rendered as `&#x20;`
+  entities. Both were mechanically stripped before landing it here —
+  content wasn't otherwise reworded or reflowed. The original's
+  one-sentence-per-line wrapping style was left as-is rather than
+  reflowed into normal paragraphs, so the diff against any future
+  Tim-supplied version stays minimal and reviewable.
+- Landing this file also let two Urgent backlog items close out their
+  claude.md half: the Westlaw Find & Print global rule (new section
+  under Citation Standards) and the never-CC-clients-on-emails-to-
+  opposing-counsel rule (new "Client Email Routing" subsection under
+  Client Communication Rules). Both were staged in
+  `PENDING_CLAUDE_MD_CHANGES.md` — see CHANGELOG for detail.
 
-**Action needed from Edwyn/Tim:** paste or upload the current live
-`claude.md` and `klg-context.md` text (wherever the primary Alfred/Claude.ai
-session that treats them as project-knowledge files currently keeps them),
-and I'll seed real v1.0.0 history from the actual files instead of these
-placeholders.
+`klg-context.md` (firm/team/matter context — the Slack User ID team
+table, etc.) is still the v0.1.0 placeholder. Same gap as before:
+**action needed from Edwyn/Tim** to supply the current file.
 
 ## Promotion path
 

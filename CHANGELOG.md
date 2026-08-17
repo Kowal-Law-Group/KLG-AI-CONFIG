@@ -5,6 +5,33 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.5.0] — 2026-08-17
+
+### Added
+- Real `claude.md` — Tim's August 15, 2026 working copy, supplied by
+  Edwyn from his OneDrive. Replaces the v0.1.0 placeholder. Source was
+  a docx-to-markdown export with backslash-escaped markdown characters
+  and `&#x20;` blank-line entities; both stripped mechanically, no
+  content reworded. Original one-sentence-per-line wrapping style left
+  as-is so future diffs against Tim's own edits stay minimal.
+- New "Westlaw Find & Print Format" subsection under Citation Standards
+  — the ad hoc-session half of the ["Honor Westlaw Find & Print
+  format"](https://app.notion.com/p/3650fc06a06c81b09fd3f4dd54d12b1e)
+  item (Urgent). Closes it out; the skill-level half shipped in v0.2.0
+  and was confirmed live on the org skill in v0.4.2.
+- New "Client Email Routing" subsection under Client Communication
+  Rules — the never-CC-clients-on-emails-to-opposing-counsel rule from
+  the ["Never CC clients"](https://app.notion.com/p/3670fc06a06c817fb9a3e6436b438847)
+  item (Urgent). This closes that item completely — it was claude.md
+  only, no skill-level half.
+- Both rules were staged in `PENDING_CLAUDE_MD_CHANGES.md` since
+  2026-08-11, waiting on exactly this file. That staging file is now
+  cleared.
+
+### Not done yet
+- `klg-context.md` real content — still the v0.1.0 placeholder. Needs
+  Edwyn/Tim to supply it the same way claude.md just arrived.
+
 ## [0.4.2] — 2026-08-14
 
 ### Verified
