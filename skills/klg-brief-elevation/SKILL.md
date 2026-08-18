@@ -51,6 +51,11 @@ Then read the detailed review frameworks in this skill's
    workflow (Steps D.1–D.7): feedback extraction, evaluation
    framework, sensitive item walkthrough, redline production,
    and email synopsis generation. Read this when Path D triggers.
+9. **KLG Brief Quality Rubric** (Notion, fetched, not a local
+   file) — shared Brief Quality and Value Contribution vocabulary
+   also used by `klg-case-assessment` and `klg-brief-postmortem`.
+   v0.1, not yet attorney-calibrated — use it, but don't treat its
+   grade anchors as settled.
 
 Do not skip these reads. The review quality depends on having these
 standards loaded.

@@ -30,6 +30,11 @@ Before writing anything, read these reference files in the skill's
    rate sheet, and engagement structure principles
 4. `references/workflow-patterns.md` — Iterative case memo and
    client memo patterns
+5. **KLG Brief Quality Rubric** (Notion, fetched, not a local
+   file) — shared Brief Quality and Value Contribution vocabulary
+   also used by `klg-brief-elevation` and `klg-brief-postmortem`.
+   v0.1, not yet attorney-calibrated — use it, but don't treat its
+   grade anchors as settled.
 
 If any of these files are missing from the skill folder, prompt the
 user to provide them. The skill cannot produce compliant output

@@ -5,6 +5,16 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.6.1] — 2026-08-18
+
+### Added
+- Built the [KLG Brief Quality Rubric](https://app.notion.com/p/3c00fc06a06c81bb9194f59662dc6c75) Notion page — three sections (Brief Quality letter-grade rubric across 7 criteria, 100-point Ketchum-anchored Value Contribution framework, categorical Case Starting Difficulty) per the spec in ["Build KLG Brief Quality Rubric Notion page"](https://app.notion.com/p/3590fc06a06c81508cd3cc3d4d266eef). Marked v0.1, explicitly flagged as not yet attorney-calibrated. The two `Ketchum v. Moses` (2001) 24 Cal.4th 1122 citations were checked against a secondary source before use; the "Results obtained" component is left `[VERIFY]` — it's commonly paired with the Ketchum/Serrano factors in fee-award practice but wasn't confirmed this pass as a holding of either case specifically.
+- Referenced the new rubric page from `klg-case-assessment` and `klg-brief-elevation`'s Required Context sections (item #5 and #9 respectively), per the backlog item's own sequencing note.
+
+### Not done yet — flagged back, not landed
+- **Seed Exemplar Database with 5–10 real exemplars**: re-reading the entry, this needs Tim to personally select "the briefs he's most proud of" — that's a judgment call, not something to guess at from this session. Doesn't clear the Lane 2 bar ("no Tim input needed"); recommend treating as Lane 3.
+- **Standard linked views on project pages**: depends on the Work Product DB existing with a two-way Projects relation — and "Create Work Product database" is explicitly listed under Lane 1 (architecture, needs Tim, do not touch) in the Backlog Triage page. Can't be built without that dependency; flagged back rather than attempted.
+
 ## [0.6.0] — 2026-08-18
 
 ### Added
