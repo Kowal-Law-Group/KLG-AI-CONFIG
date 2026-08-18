@@ -5,6 +5,90 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.8.0] — 2026-08-18
+
+### Added — narrow new-skills cluster (Backlog Triage Lane 2)
+3 of 15 items landed as genuinely self-contained; 12 flagged back
+(see below). Triage re-read each item's full page, not just the
+Backlog Triage summary line, since the "no Tim input needed" bar
+turned out not to hold for most of this cluster despite its Lane 2
+placement.
+
+- New skill `klg-extension-good-cause` — drafts the good-cause /
+  reasons section of Court of Appeal (APP-006 + APP-031A) and
+  U.S. Supreme Court cert extension applications. Encodes the
+  rule 8.63 factors, pulls the live competing-deadline list from
+  Motion/Notion instead of re-typing it, leads with what's new
+  since the last grant, genericizes confidential/DZ matters, and
+  checks cross-matter factual consistency on recurring facts
+  (the Ryan Merker death-date pattern).
+- New skill `klg-email-voice` — drafts/rewrites emails and Slack
+  messages in Tim's actual voice (cold open, bold-prefix leads,
+  short declaratives, confident unhedged takes, `-Tim` sign-off)
+  instead of brief-voice prose, with a recipient-register table
+  (DZ bluntest, trial counsel more formal, clients warmer).
+- `klg-daily-triage` — new Pillar 6 (Appeal Watch Scan): scans
+  SharePoint matter folders for newly added judgments, orders, and
+  notices of entry, applies Tim's flat 60-day deadline rule (no
+  Rule 8.104/8.108 logic), and surfaces detected items for
+  attorney confirmation before anything becomes a hard deadline.
+  Built as a Pillar 6 sub-routine rather than a standalone skill
+  or scheduled agent, per Tim's own May 12, 2026 note that v1
+  should be "a skill first, agent later... likely a sub-routine
+  inside klg-daily-triage." Uses the same rolling 14-day window as
+  Pillar 5, which sidesteps the entry's open "where does the watch
+  list live" question — v1 needs no persistent storage, since
+  nothing must survive between runs beyond what the report already
+  shows. Wired into Mode A as Step A.7, renumbering A.7–A.9 to
+  A.8–A.10.
+
+### Flagged back — did not clear the Lane 2 bar
+- **klg-client-revision-review**: entry's own "Open design
+  questions" section leaves input-format handling, architecture
+  (standalone vs. klg-brief-elevation extension), and output format
+  as the author's leanings, not decisions.
+- **klg-brief-postmortem**: entry states its own build sequence —
+  "klg-exemplar-harvest first... then this skill" — and
+  klg-exemplar-harvest hasn't landed.
+- **klg-friday-team-meeting**: four explicit open design questions
+  (output destination, auto-population of "wins," postmortem
+  auto-linking, run cadence).
+- **klg-slack-harvest**: unverified technical dependency — the
+  entry itself asks whether the Slack MCP connector reliably
+  exposes emoji reactions per message, with no fallback confirmed
+  — plus open DM-scanning and scan-window questions.
+- **Brief Introduction default + outline generator**: entry ends
+  with a direct quote from Tim — "We should actually work through
+  that skill update carefully" — requesting a dedicated working
+  session. The opposite of "no Tim input needed."
+- **PNC intake-screening gate**: foundational architecture question
+  unresolved (standalone skill vs. gate inside klg-case-assessment
+  vs. claude.md behavioral rule).
+- **klg-cert-petition**: page has no content — no spec exists to
+  build from.
+- **Lock petition-for-review structure**: unresolved Rule
+  8.504(b)(1) reading question (does "begin with" require the
+  issues statement first, ahead of the petitioning paragraph?) that
+  needs attorney verification before the structure can be locked,
+  plus a sequencing dependency on the Palmieri petition being
+  finalized.
+- **klg-exemplar-harvest**: two open sourcing questions (sealed/
+  paywalled briefs; Ninth Circuit vs. California fee-shifting
+  treatment) unresolved.
+- **klg-exemplar-onboard**: explicitly gated on seeding the
+  Exemplar Database with 5-10 real exemplars first — same blocked
+  dependency flagged in v0.6.1.
+- **klg-style-exemplars**: two-deep dependency chain (seeding →
+  klg-exemplar-onboard → this skill), neither link landed.
+- **klg-dz-overlay (full build)**: this backlog entry is Status
+  "In progress," not New — a v1 bundle already exists outside this
+  repo. The one substantive open item, the invisibility-surcharge
+  dollar figure, is explicitly Tim's call ("Tim needs to pick a
+  number before the conversation with David"), and the item is also
+  waiting on that conversation's outcome. Not re-attempted here;
+  distinct from the narrow Phase 0 gating-questions item already
+  landed on this skill in v0.7.0.
+
 ## [0.7.0] — 2026-08-18
 
 ### Added — narrow skill-updates cluster (Backlog Triage Lane 2)

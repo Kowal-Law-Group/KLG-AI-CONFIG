@@ -23,7 +23,7 @@ description: >
 
 ## Purpose
 
-Cross-cutting operational skill built on five pillars:
+Cross-cutting operational skill built on six pillars:
 
 1. **Surface critical emails** — mid-week rescue when the inbox
    is drowning Tim. Not full inbox management, just "here's what
@@ -41,13 +41,18 @@ Cross-cutting operational skill built on five pillars:
 5. **Silent-task scan** — catch Notion task pages that were
    created but never broadcast to their owner via Slack, so a
    deadline can't pass silently on a task nobody knew existed.
+6. **Appeal watch scan** — deadline-protection backstop. Scans
+   SharePoint matter folders for newly added judgments, orders,
+   and notices of entry that may trigger a notice-of-appeal
+   deadline, and surfaces them for Tim's confirmation before
+   anything becomes a hard deadline.
 
 Unlike other KLG skills, this is NOT case-specific. It operates
 across all matters and team members.
 
 ## Required Context
 
-1. This SKILL.md — core workflow, five pillars, and mode logic
+1. This SKILL.md — core workflow, six pillars, and mode logic
 2. `references/comms-log-triage.md` — comms log classification
    system, thread deduplication, report generation, Notion
    project page architecture, and close-the-loop mechanics.
@@ -68,6 +73,7 @@ across all matters and team members.
 | Zapier (Outlook) | Find/Flag/Move/etc. | Inbox write ops |
 | Notion | Fetch, Search, Query, Create | Comms log + Projects |
 | M365 | outlook_email_search | Inbox scan (read) |
+| M365 | sharepoint_folder_search, sharepoint_search | Appeal watch scan (read) |
 | Slack | search, send_message_draft | Notifications |
 
 ### Connector Preflight
@@ -296,9 +302,67 @@ creation time.
 
 ---
 
+## Pillar 6: Appeal Watch Scan
+
+Deadline-protection backstop. KLG has no systematic mechanism for
+catching appealable orders, judgments, and notices of entry as they
+land in matter folders — if nobody manually flags a new ruling as
+appealable, it can sit undetected until the notice-of-appeal
+deadline passes. Notice-of-appeal deadlines are jurisdictional and
+non-extendable, so this is a real institutional risk, not a nice-
+to-have. Built as v1 per Tim's May 12, 2026 design decisions below
+— a skill sub-routine now, promoted to a scheduled agent once that
+infrastructure exists.
+
+**Scope of scan.** Use `sharepoint_folder_search`/`sharepoint_search`
+to pull documents added or modified across matter folders in the
+last 14 days (same rolling window as Pillar 5, so no separate
+last-scan timestamp needs to be stored anywhere — the open "where
+does the watch list live" question from the backlog entry doesn't
+need an answer for v1, since nothing needs to persist between runs
+beyond what the report already surfaces).
+
+**Detection — two-layer, per Tim's design decision to keep this
+generous rather than precise:**
+
+1. Filename heuristics catch the easy cases: "Judgment," "Notice
+   of Entry," "Order Granting," "Order Denying," "Anti-SLAPP,"
+   "Motion to Compel Arbitration," "Injunction," "Receiver,"
+   "Summary Judgment," "Sanctions," alongside probate-order
+   naming patterns.
+2. For ambiguous filenames in a matter folder that's otherwise
+   active, read the document and classify it directly rather than
+   skipping it — false positives are the acceptable failure mode
+   here, not false negatives.
+
+**Deadline computation (Tim's flat-rule decision — do not build
+out Rule 8.104/8.108 logic):** trigger date (entry date or service
+of notice of entry) + 60 days flat. Limited civil cases technically
+run on a 30-day deadline, but per Tim these are under 1% of KLG's
+appellate volume — not worth the engineering complexity. Flag any
+matter for manual confirmation if it looks like a limited civil
+case. Separately, flag any deadline computation that depends on
+whether a post-trial motion was filed (tolls/extends the trigger
+date) and ask for human confirmation rather than guessing.
+
+**Scope — direct vs. co-counsel matters.** Flag which is which for
+each detected item and let the responsible attorney decide whether
+KLG is the deadline owner or just the watchman on that matter.
+
+**Output.** Surface each detected item in the triage report: source
+document, matter, computed deadline, direct/co-counsel flag, and a
+"Confirm as calendared deadline?" prompt. Nothing is pushed to
+Motion automatically — per Tim's design decision, every item needs
+explicit attorney confirmation before it becomes a hard deadline.
+Once Tim confirms an item, offer to push it to Motion via the
+existing Create Task Zapier connector so it lands in the regular
+deadline pipeline.
+
+---
+
 ## Mode A: Full Triage
 
-Runs all five pillars and produces the complete report.
+Runs all six pillars and produces the complete report.
 
 ### Step A.1: Close prior triage loop
 
@@ -331,7 +395,13 @@ Pull, deduplicate, classify, generate Notion project page.
 Scan the Tasks database per Pillar 5. Collect any task matching
 all three criteria for the consolidated summary.
 
-### Step A.7: Produce consolidated summary
+### Step A.7: Appeal watch scan (Pillar 6)
+
+Scan SharePoint matter folders per Pillar 6. Collect any detected
+appealable event, its computed deadline, and its direct/co-counsel
+flag for the consolidated summary.
+
+### Step A.8: Produce consolidated summary
 
 Conversational summary in this order:
 1. Real overdue items (Motion)
@@ -339,16 +409,17 @@ Conversational summary in this order:
 3. Critical inbox items (top 3–5)
 4. Comms log summary stats (X items, Y need action)
 5. Silent tasks found (count + offer to send handoffs)
-6. Data hygiene punch list (count + offer to Slack)
-7. Link to the Notion triage report page
+6. Appeal watch items found (count + list + confirm prompts)
+7. Data hygiene punch list (count + offer to Slack)
+8. Link to the Notion triage report page
 
-### Step A.8: Send Slack notification
+### Step A.9: Send Slack notification
 
 Via `slack_send_message_draft` to #all-kowallawgroup (or a
 dedicated triage channel). Brief summary + Notion link.
 Brittney works from the Notion page, not from Slack.
 
-### Step A.9: Time blocking (optional)
+### Step A.10: Time blocking (optional)
 
 Offer to propose time blocks and write to Motion. Batch
 decisions first, then execute. Each call = 2 Zapier tasks.
@@ -373,7 +444,7 @@ Flag stalled high-priority matters.
 
 ### Step B.4: Recommendations + time blocking
 
-Suggest task moves, deep-work blocks, then offer Step A.9.
+Suggest task moves, deep-work blocks, then offer Step A.10.
 
 ### Step B.5: Summary + visual dashboard
 
