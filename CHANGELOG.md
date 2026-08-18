@@ -5,6 +5,50 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.6.0] — 2026-08-18
+
+### Added
+- claude.md — four of the five Batch 2 "claude.md style rules" from the
+  Backlog Triage's Lane 2 list, each landed as a self-contained rule:
+  - **Heart of a section up front** — new bullet in Brief Argument
+    Structure: a section's thesis belongs in the preamble, not buried in
+    a subsection. Fixes ["Style rule — heart of a section..."](https://app.notion.com/p/3620fc06a06c816b8a2cff7d9eede777).
+  - **Active verbs over nominalizations/gerunds** — new bullet in Style
+    Checks. Fixes ["Style rule — active verbs..."](https://app.notion.com/p/3620fc06a06c81f1b42bf096e5981df5).
+  - **Heading conventions** — replaced the over-broad "sentence case
+    with punctuation" heading rule (which mis-flagged "Issue Presented"
+    and "Petition for Review" on a real petition draft) with the
+    two-part rule: brief section labels are Title Case/no punctuation,
+    argument headings are punctuated sentences. Fixes
+    ["Heading conventions..."](https://app.notion.com/p/3b50fc06a06c812c8c8dd08341552670).
+  - **Client Communication Voice** — new subsection under Client
+    Communication Rules: first-person plural ("we"/"us") in client-facing
+    communications signed under firm letterhead, not first-person
+    singular. Fixes ["Use first-person plural..."](https://app.notion.com/p/35a0fc06a06c81a2b60ad0c64b12fb79).
+- `klg-style-guide-check` — Category C rewritten to mirror the new
+  two-part heading rule (so the redline stops flagging correct section
+  labels); Category D extended to flag nominalization/gerund patterns;
+  checklist table row updated to match both fixes.
+- `klg-brief-elevation` — new Appellate Style Rules bullet: flag a
+  section whose thesis is buried in a subsection rather than stated in
+  the preamble.
+
+### Not done yet
+- The fifth item in that Lane 2 cluster, "Word round-trip for
+  Notion-first drafts," is not a rule addition — the backlog entry
+  itself frames it as an open workflow question ("bookmarked for a
+  later workflow discussion") with no proposed fix to implement. Not
+  landed here; flagged back to the triage as likely Lane 3 (needs a
+  scope call), not Lane 2. See the entry's own page for detail.
+- None of these four rules have been mirrored into the actual KLG
+  Style Manual document (each backlog entry asks for both claude.md
+  and the Style Manual) — this repo doesn't have that file. Needs
+  Edwyn/Tim to apply the same four edits there.
+- Same blocker as v0.5.0/v0.5.1: this claude.md still hasn't gone live
+  in Tim's Project Knowledge. These four rules ship in the same
+  standalone file already pending his upload — no separate action
+  needed once that happens.
+
 ## [0.5.2] — 2026-08-17
 
 ### Changed

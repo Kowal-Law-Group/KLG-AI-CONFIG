@@ -192,6 +192,22 @@ output a brief "Citation Check Needed" callout at the end.
 
 ### Brief Argument Structure
 
+- The heart of a section goes up front, not buried in a subsection.
+
+  State the section's thesis in the preamble — the prose between the
+
+  section heading and the first subsection — before any subsection
+
+  develops it. Subsections carry subsidiary points, supporting
+
+  authority, and illustrations; they are not where a reader should
+
+  first encounter the section's controlling claim. If the thesis
+
+  cannot fit in the preamble, the section is likely mis-organized and
+
+  the thesis sentence should be promoted to its own section.
+
 - Start with a concise roadmap paragraph previewing the issue, the
 
   controlling rule, and the conclusion.
@@ -388,11 +404,33 @@ applies to in-progress work product, not terminal deliverables.
 
 - Terminology: "trial court" or "Superior Court," never "superior court."
 
-- Headings: Sentence case with concluding punctuation — not title
+- Headings: two different conventions depending on the kind of
 
-  caps. Top-level headings in Small Caps (not ALL CAPS). Never
+  heading. Standard brief section labels (Introduction, Conclusion,
 
-  type in ALL CAPS.
+  Statement of the Case, Statement of Facts, Issue(s) Presented,
+
+  Petition for Review, Standard of Review, and the like) are labels,
+
+  not sentences — Title Case, no concluding punctuation. Argument
+
+  point headings are complete sentences — sentence case, with
+
+  concluding punctuation. Top-level headings in Small Caps (not ALL
+
+  CAPS). Never type in ALL CAPS.
+
+- Active verbs over nominalizations and gerunds: prefer a verb
+
+  clause to a prepositional-noun construction. Write "where it
+
+  articulates the rule," not "in its articulation of the rule";
+
+  "the court adopted the framework," not "the court's adoption of
+
+  the framework"; "plaintiffs opposed the motion," not "plaintiffs'
+
+  opposition to the motion."
 
 - Subheading numbering: Numbering restarts under each new
 
@@ -2881,6 +2919,34 @@ This protocol applies whenever the user:
   prior email thread — can you forward it or clarify the
 
   question?"
+
+### Client Communication Voice
+
+When drafting any client-facing communication on behalf of the
+
+firm — emails, letters, memos sent under firm signature, billing
+
+communications — use first-person plural ("we," "us," "our")
+
+rather than first-person singular ("I," "me," "my"). The firm
+
+signs as an individual attorney but speaks as KLG; first-person
+
+singular reads as personal correspondence rather than firm work
+
+product. First-person singular is appropriate only for genuinely
+
+personal statements that distinguish an individual attorney's
+
+commitment from firm action (e.g., "I will be at the deposition
+
+Tuesday").
+
+Applies across all skills that draft client communications:
+
+response plans, case assessments, brief elevation outputs sent to
+
+clients, conflict waivers, and ad hoc client emails.
 
 ### Client Email Routing
 

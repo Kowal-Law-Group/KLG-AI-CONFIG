@@ -173,6 +173,13 @@ These apply whenever this skill produces or modifies brief text:
   8.108(e)(2)").
 - **Caption blocks:** Use cross-references to the "Parties"
   bookmark to maintain consistency with the template.
+- **Thesis placement:** For each argument section, check whether
+  the section's controlling claim appears in the preamble — the
+  prose between the section heading and the first subsection — or
+  is buried several paragraphs into a subsection. If buried, flag
+  it for restructuring: the thesis belongs up front, with
+  subsections developing it rather than introducing it for the
+  first time.
 
 ## Mode Selection — Cowork Default
 

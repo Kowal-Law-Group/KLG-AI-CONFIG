@@ -130,17 +130,34 @@ use the full form; all subsequent citations use the bare
 lowercase "rule" short form.
 
 ### Category C: Heading issues
-Check against the heading rules in the style guide. Key targets:
-ALL CAPS headings, headings that are labels instead of persuasive
-sentences, missing terminal punctuation, missing active verbs,
-headings orphaned at page bottoms. Also check: SOC subheadings
-(P3-level or italic narrative) must be complete sentences, not
-fragments — a reader scanning headings alone should understand
-the story.
+Check against the heading rules in the style guide, which draw two
+different conventions depending on the kind of heading:
+- **Standard brief section labels** (Introduction, Conclusion,
+  Statement of the Case, Statement of Facts, Issue(s) Presented,
+  Petition for Review, Standard of Review, and the like) are labels,
+  not sentences. Correct form: Title Case, no concluding punctuation.
+  Flag ALL CAPS. Do not flag these for missing terminal punctuation
+  or for reading as a label rather than a persuasive sentence — that
+  is the correct form for this category.
+- **Argument point headings** are complete persuasive sentences.
+  Correct form: sentence case, concluding punctuation, active verbs.
+  Flag ALL CAPS, missing terminal punctuation, missing active verbs,
+  and any heading that reads as a bare topic label instead of a
+  persuasive sentence.
+Also check: SOC subheadings (P3-level or italic narrative) must be
+complete sentences, not fragments — a reader scanning headings alone
+should understand the story. Also check headings orphaned at page
+bottoms.
 
 ### Category D: Prohibited words and legalese
 The style guide and claude.md list specific banned words and
-phrases. Scan the full document for any occurrence.
+phrases. Scan the full document for any occurrence. Also scan for
+nominalization and gerund constructions where an active verb is
+available — watch for the patterns "in its [noun] of," "upon
+[noun] of," and possessive + nominalization + "of" (e.g., "the
+court's adoption of," "plaintiffs' opposition to"). Flag each with
+the active-verb rewrite (e.g., "the court adopted," "plaintiffs
+opposed").
 
 ### Category E: Mechanics
 Typos, grammar, punctuation, em dash spacing (no spaces), double
@@ -288,7 +305,8 @@ systemic issues, not individual typos. Example:
 | Court names: "Superior Court" or "trial court" | ✅ / ⚠️ | [details] |
 | No fusty prayer language (WHEREFORE, etc.) | ✅ / ⚠️ | [details] |
 | Rules of Court: bare "rule" short form (no Cal. prefix) | ✅ / ⚠️ | [details] |
-| Headings: sentence case with punctuation | ✅ / ⚠️ | [details] |
+| Headings: section labels Title Case/no punctuation, argument headings sentence case/punctuated | ✅ / ⚠️ | [details] |
+| Language: active verbs over nominalizations/gerunds | ✅ / ⚠️ | [details] |
 | SOC subheadings: complete sentences | ✅ / ⚠️ | [details] |
 | No ALL CAPS | ✅ / ⚠️ | [details] |
 | Citations: no naked cites | ✅ / ⚠️ | [details] |
