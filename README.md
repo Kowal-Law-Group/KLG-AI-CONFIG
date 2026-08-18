@@ -53,6 +53,11 @@ placeholder seeded in v0.1.0. Two things worth knowing about this pass:
   opposing-counsel rule (new "Client Email Routing" subsection under
   Client Communication Rules). Both were staged in
   `PENDING_CLAUDE_MD_CHANGES.md` — see CHANGELOG for detail.
+- v0.6.0 added four more rules on top of that same file — from the
+  Backlog Triage's Batch 2 "claude.md style rules" cluster — before
+  any of it has gone live in Tim's Project Knowledge. See CHANGELOG
+  for detail; none of this needs a separate upload, it's all in the
+  one standalone file already pending Tim's swap.
 
 `klg-context.md` (firm/team/matter context — the Slack User ID team
 table, etc.) is still the v0.1.0 placeholder. Same gap as before:
