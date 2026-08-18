@@ -517,6 +517,38 @@ why the omission matters (waiver, weakness, strategic choice).
 
 ---
 
+### PAYMENT SCHEDULE (when a fee estimate is available)
+
+Only include this section when the memo identifies both a briefing
+deadline and a fee estimate for this phase. If an estimate hasn't
+been set yet, skip this section rather than guessing at one.
+
+Don't auto-generate the schedule silently — propose it and ask the
+attorney to confirm before it goes to accounts, since it commits
+the client to specific payment dates:
+
+```
+This phase's estimate is [$X] against the [deadline]. Proposed
+advance-payment schedule, per the retainer's phase-based
+payment clause:
+
+- First payment: [$ amount] at [date — 30 days from today]
+- Second payment: [$ amount] at [date — 60 days from today]
+- Final payment: [$ amount] at [date — 30 days before the
+  deadline, or before drafting begins, whichever is earlier]
+
+Checkpoints are tied to the initial/soft deadline, not the hard
+deadline. Confirm this schedule (or adjust it) before I hand it to
+accounts.
+```
+
+Once confirmed, hand off in a format legible for the accounts team
+(Josué) to track: phase, estimate, and the three checkpoint dates
+and amounts — as a Slack message or a line in the matter's Notion
+project page, whichever the accounts handoff pattern already uses.
+
+---
+
 ## Document Structure — Appellant Mode
 
 ### HEADER
@@ -791,6 +823,38 @@ why the omission matters (waiver, weakness, strategic choice).
 
 **Action item:** [single clear next step]
 **Next stage:** [what follows after completion]
+
+---
+
+### PAYMENT SCHEDULE (when a fee estimate is available)
+
+Only include this section when the memo identifies both a briefing
+deadline and a fee estimate for this phase. If an estimate hasn't
+been set yet, skip this section rather than guessing at one.
+
+Don't auto-generate the schedule silently — propose it and ask the
+attorney to confirm before it goes to accounts, since it commits
+the client to specific payment dates:
+
+```
+This phase's estimate is [$X] against the [deadline]. Proposed
+advance-payment schedule, per the retainer's phase-based
+payment clause:
+
+- First payment: [$ amount] at [date — 30 days from today]
+- Second payment: [$ amount] at [date — 60 days from today]
+- Final payment: [$ amount] at [date — 30 days before the
+  deadline, or before drafting begins, whichever is earlier]
+
+Checkpoints are tied to the initial/soft deadline, not the hard
+deadline. Confirm this schedule (or adjust it) before I hand it to
+accounts.
+```
+
+Once confirmed, hand off in a format legible for the accounts team
+(Josué) to track: phase, estimate, and the three checkpoint dates
+and amounts — as a Slack message or a line in the matter's Notion
+project page, whichever the accounts handoff pattern already uses.
 
 ---
 

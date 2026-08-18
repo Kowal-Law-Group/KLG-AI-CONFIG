@@ -291,6 +291,21 @@ files identified as Westlaw output.
 
 ### Step B.0: Prepare Westlaw Materials
 
+**Check SharePoint before asking for an upload.** Many matters
+already have a Westlaw Find & Print batch sitting in the matter's
+KLG Research folder from an earlier pass. Search that folder first
+for individual case PDFs and/or a combined Find & Print PDF. If
+found, read each with `read_resource` and use that text as the
+source for Steps B.1–B.4 — no manual upload needed. Only fall back
+to asking the user to run and upload Westlaw output for authorities
+that SharePoint doesn't cover.
+
+Some matters have both a SharePoint batch and CoCounsel-grounded
+holdings from earlier in the session. When both exist, prefer the
+SharePoint full text; fall back to a CoCounsel-grounded summary
+only when no full text is available, and label anything sourced
+that way medium confidence, never high.
+
 If the Westlaw output is in .doc format, convert to .docx:
 ```bash
 python /mnt/skills/public/docx/scripts/office/soffice.py \
@@ -356,6 +371,13 @@ For each verified authority, read the Westlaw text and assess:
    parenthetical quote or characterization, verify it against
    the actual text.
 
+**Confidence discipline (non-negotiable):** rate an authority's
+support only from text actually read this session — SharePoint
+full text or a freshly-uploaded Westlaw pull. Never rate a holding
+from training memory. An authority with no source text on hand is
+marked "not assessed," routed to the bare-citation Find & Print
+list below, and never given a 🟢 signal.
+
 ### Step B.4: Check KeyCite Status
 
 For each authority, record the KeyCite status:
@@ -386,18 +408,26 @@ SUMMARY
 CRITICAL FINDINGS (must fix before filing)
 [List each ❌ and 🔴 finding with details]
 
-HOLDING ACCURACY TABLE
-| # | Citation | Proposition in Brief | Holding in Case | Rating | KeyCite | Notes |
-|---|----------|---------------------|-----------------|--------|---------|-------|
-| 1 | [cite]   | [what brief says]   | [what case says] | ✅/⚠️/❌ | 🟢/🟡/🔴 | [details] |
+PROPOSITION-SUPPORT CHART
+| # | Citation | Proposition in Brief | Source Available | Signal | Confidence | Basis | Notes |
+|---|----------|----------------------|-------------------|--------|------------|-------|-------|
+| 1 | [cite]   | [what brief says]    | SharePoint Y/N    | 🟢/🟡/🔴 | High/Med/Low | Full text / CoCounsel-grounded / Not assessed | [details] |
+
+Signal legend: 🟢 supported, 🟡 questionable, 🔴 not supported.
+An authority marked "Not assessed" under Basis never carries a 🟢
+signal — see the confidence-discipline rule in Step B.3.
 
 RECOMMENDED FIXES
-For each ⚠️ and ❌ finding:
+For each 🟡 and 🔴 finding:
 1. [Citation] — [What's wrong] — [Suggested fix]
 
-AUTHORITIES NOT VERIFIED
-[List any authorities not in the Westlaw pull — need
-additional Westlaw search]
+BARE-CITATION FIND & PRINT LIST
+For every authority marked "Not assessed" — no source text on hand
+this session. Bare reporter citation only (volume/reporter/page),
+one per line, deduplicated, per the Westlaw Find & Print Format
+rule in claude.md — no case names, years, pincites, or
+parentheticals, so the list pastes directly into the Westlaw batch
+box. Statutes go in their own separate batch-safe list.
 ```
 
 ### Step B.6: Deliver and Offer Next Steps

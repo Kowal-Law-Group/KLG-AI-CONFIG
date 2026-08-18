@@ -5,6 +5,66 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.7.0] — 2026-08-18
+
+### Added — narrow skill-updates cluster (Backlog Triage Lane 2)
+8 of 11 items landed; 3 flagged back (see below).
+
+- `klg-appendix-cites` — new Phase C (repagination rebuild for
+  amended appendices: chronological-index extraction, mapping
+  table, offset formula, tracked-changes redline), and a new Step
+  A.5 (omitted-documents audit: full-document-set list, docket
+  review, three-column reconciliation, attorney sign-off gate),
+  renumbering the old Step A.5 (deliver) to A.6.
+- `klg-cite-check` Phase B — SharePoint auto-sourcing before asking
+  for a manual Westlaw upload; confidence-discipline rule (rate
+  only from text read this session, never from training memory);
+  the holding-accuracy table rebuilt as a proposition-support chart
+  with Source/Signal/Confidence/Basis columns; bare-citation Find &
+  Print list for unassessed authorities.
+- `klg-oral-argument` — new Step B.4 (Step B.5 was Deliver, now
+  renumbered): fresh-authority scan across each issue in the
+  argument map for authority decided in the last 6–12 months,
+  drafts a rule 8.254 letter for attorney review when genuinely
+  new, and explicitly declines to draft one when an authority isn't
+  clearly new (the Palmieri v. Foondos failure mode).
+- `klg-dz-overlay` — new Phase 0: the three gating questions (pitch,
+  ask, gazelle-or-squirrel) run before any merits deep-dive or
+  hours estimate on a DZ-sourced matter.
+- `klg-response-plan` — new "Payment Schedule" subsection (both
+  modes) that proposes the three-checkpoint advance-payment
+  schedule when a fee estimate exists, and asks the attorney to
+  confirm before handing it to accounts — chose propose-and-confirm
+  over silent auto-generation since it commits the client to
+  payment dates.
+- `klg-daily-triage` — new Pillar 5 (silent-task scan: Notion task
+  pages created in the last 14 days with an assignee but no Slack
+  broadcast in that window), wired into Mode A as Step A.6,
+  renumbering A.6–A.8 to A.7–A.9.
+- `klg-brief-elevation` + claude.md — subheading discipline rule
+  ("no new heading unless the analysis exceeds ~2 pages or a
+  distinct analytical step warrants separation") landed in both:
+  the principle in claude.md's Brief Argument Structure, the
+  enforcement (merge as tracked change) in brief-elevation's
+  Appellate Style Rules.
+
+### Flagged back — did not clear the Lane 2 bar
+- **klg-daily-triage Think Tank hygiene scan**: the entry's own
+  dependency (Think Tank added as a Projects Category in claude.md)
+  isn't landed — confirmed no "Think Tank" references exist yet in
+  claude.md's three-tier Category system. Adding a fourth category
+  is a schema decision, not a narrow skill update.
+- **Shepardizing step via Westlaw Litigation Document Analyzer**:
+  the entry itself says "no design beyond identifying the gap" and
+  poses an open architectural question (augment Find & Print, or
+  replace it?) that Tim flagged for a manual pilot before automating.
+- **New Petition for Supersedeas template**: the entry lists five
+  open structural questions for an Attorney Roundtable (verification
+  placement, memorandum integration, paragraph numbering, rule
+  8.112 citation to verify, component order) and ends with "AI
+  proposes; conventions are an attorney determination." Not mine to
+  decide unilaterally.
+
 ## [0.6.1] — 2026-08-18
 
 ### Added

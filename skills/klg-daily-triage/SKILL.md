@@ -23,7 +23,7 @@ description: >
 
 ## Purpose
 
-Cross-cutting operational skill built on four pillars:
+Cross-cutting operational skill built on five pillars:
 
 1. **Surface critical emails** — mid-week rescue when the inbox
    is drowning Tim. Not full inbox management, just "here's what
@@ -38,13 +38,16 @@ Cross-cutting operational skill built on four pillars:
    routed to the Notion comms log, classify it, generate an
    actionable report as a Notion project page, and send Slack
    notifications. Prevent routed emails from going dark.
+5. **Silent-task scan** — catch Notion task pages that were
+   created but never broadcast to their owner via Slack, so a
+   deadline can't pass silently on a task nobody knew existed.
 
 Unlike other KLG skills, this is NOT case-specific. It operates
 across all matters and team members.
 
 ## Required Context
 
-1. This SKILL.md — core workflow, four pillars, and mode logic
+1. This SKILL.md — core workflow, five pillars, and mode logic
 2. `references/comms-log-triage.md` — comms log classification
    system, thread deduplication, report generation, Notion
    project page architecture, and close-the-loop mechanics.
@@ -262,9 +265,40 @@ close-the-loop mechanics are in
 
 ---
 
+## Pillar 5: Silent-Task Scan
+
+The firm's AI OS is Notion-first — task pages originate there, with
+Slack as the broadcast layer. A Notion task page that gets created
+but never broadcast to its owner is invisible to everyone; the
+assignee never learns the task exists, and the deadline can pass
+with nobody noticing. This happened during Eastman event prep: a
+research-pull task was created with an internal deadline, the Slack
+handoff to its owner was never sent, and the deadline passed
+silently.
+
+Scan the Tasks database for any page meeting all three criteria:
+
+1. Created in the last 14 days
+2. Has an assignee (or a Support Type implying one, like Research
+   Pipeline or Ad Hoc Task)
+3. Has no corresponding Slack message in the past 14 days
+   mentioning the page URL
+
+For any task matching all three, surface it in the triage report:
+"This task has not been broadcast to its owner. Send Slack
+handoff?" — with a one-click action to compose the handoff via
+`slack_send_message_draft`.
+
+This is a lighter, self-correcting scan rather than a hard rule
+requiring every task creation to include an atomic Slack post — it
+catches the failure after the fact instead of preventing it at
+creation time.
+
+---
+
 ## Mode A: Full Triage
 
-Runs all four pillars and produces the complete report.
+Runs all five pillars and produces the complete report.
 
 ### Step A.1: Close prior triage loop
 
@@ -292,23 +326,29 @@ Tim can't miss. Brief summary only.
 
 Pull, deduplicate, classify, generate Notion project page.
 
-### Step A.6: Produce consolidated summary
+### Step A.6: Silent-task scan (Pillar 5)
+
+Scan the Tasks database per Pillar 5. Collect any task matching
+all three criteria for the consolidated summary.
+
+### Step A.7: Produce consolidated summary
 
 Conversational summary in this order:
 1. Real overdue items (Motion)
 2. Priority drift alerts
 3. Critical inbox items (top 3–5)
 4. Comms log summary stats (X items, Y need action)
-5. Data hygiene punch list (count + offer to Slack)
-6. Link to the Notion triage report page
+5. Silent tasks found (count + offer to send handoffs)
+6. Data hygiene punch list (count + offer to Slack)
+7. Link to the Notion triage report page
 
-### Step A.7: Send Slack notification
+### Step A.8: Send Slack notification
 
 Via `slack_send_message_draft` to #all-kowallawgroup (or a
 dedicated triage channel). Brief summary + Notion link.
 Brittney works from the Notion page, not from Slack.
 
-### Step A.8: Time blocking (optional)
+### Step A.9: Time blocking (optional)
 
 Offer to propose time blocks and write to Motion. Batch
 decisions first, then execute. Each call = 2 Zapier tasks.
@@ -333,7 +373,7 @@ Flag stalled high-priority matters.
 
 ### Step B.4: Recommendations + time blocking
 
-Suggest task moves, deep-work blocks, then offer Step A.8.
+Suggest task moves, deep-work blocks, then offer Step A.9.
 
 ### Step B.5: Summary + visual dashboard
 

@@ -142,10 +142,46 @@ frequently cited documents and any citations that look suspicious
 (e.g., very high page numbers, citations to documents that are
 only a few pages long).
 
-### Step A.5: Deliver the Completeness Report
+### Step A.5: Omitted-Documents Audit (False-Negative Check)
 
-Produce the report as a markdown file with clear action items.
-Then present it:
+Steps A.1–A.4 catch false positives — citations that point to
+documents missing from the compile folder. They do not catch the
+failure mode that actually causes summary denials: a document the
+firm holds for the matter, that the appendix should include, that
+was never cited or added in the first place, so nothing in A.1–A.4
+ever flags it. Run this step against the full universe of documents
+the firm holds for the matter, not just what's already in the
+compile folder or already cited.
+
+1. **Omitted-documents list.** Search the matter's full document
+   set (SharePoint case folder, not just the compile folder) for
+   every document the firm holds. List every one that is NOT in
+   the proposed appendix, regardless of whether the brief cites it.
+2. **Docket review.** Read the trial court docket (Register of
+   Actions) for the matter. Flag any docket entry for a document
+   the firm does not have on hand at all, where the brief's
+   arguments plausibly require it — for example, a demurrer or
+   preliminary-injunction ruling that is being challenged, or that
+   the challenged ruling relies on.
+3. **Three-column reconciliation.** Produce a table with one row
+   per document relevant to the matter:
+   - **Included** — in the proposed appendix
+   - **Deliberately omitted** — held by the firm, not included,
+     with a stated reason (irrelevant, cumulative, sealed, etc.)
+   - **On the docket but not in our possession** — needs to be
+     obtained before the appendix can be called complete
+4. **Attorney sign-off gate.** This reconciliation is a
+   legal-judgment call — whether the brief's arguments actually
+   need a given document — not a clerical check. Present the table
+   and hold the appendix as incomplete until an attorney reviews it
+   against the brief's arguments and cited authorities and confirms
+   the "Deliberately omitted" reasons are sound.
+
+### Step A.6: Deliver the Completeness Report
+
+Produce the report as a markdown file with clear action items,
+including the Step A.5 three-column reconciliation table. Then
+present it:
 
 ```
 The completeness audit is done. Here's the summary:
@@ -155,6 +191,9 @@ The completeness audit is done. Here's the summary:
 - [N] are cited but MISSING from the compile folder ✗
 - [N] documents in the compile folder are not cited
   ([N] total pages of uncited material)
+- [N] documents the firm holds are not in the proposed appendix
+  (see reconciliation table)
+- [N] docket entries suggest a document we don't have at all
 
 [If gaps exist:]
 Before compiling the appendix, you need to add these
@@ -167,6 +206,13 @@ These documents are in the compile folder but not cited:
   1. [document name] — [N] pages
   ...
 Do you want to keep them for completeness or remove them?
+
+Before this appendix can be called complete, an attorney needs to
+sign off on the reconciliation table below — confirm each
+"deliberately omitted" reason, and let me know how to handle
+anything listed as on the docket but not in our possession.
+
+[Three-column reconciliation table from Step A.5]
 
 Would you like me to also produce this as a spreadsheet
 for easier tracking?
@@ -352,6 +398,64 @@ WHAT TO DO NEXT:
 - Update the TOC and TOA in Word
 - Update the Certificate of Word Count
 ```
+
+## Phase C: Repagination Rebuild for Amended Appendices
+
+Run this phase when the Appellant's or Respondent's Appendix gets
+repaginated mid-briefing — new material added, a motion to augment
+the record granted, or a scope error caught late that pushes page
+counts forward and may shift volume boundaries. The mechanics are
+the same as Phase B (build a mapping table, apply a tracked-changes
+redline); only the inputs differ — old final cites map to new final
+cites, instead of placeholders mapping to final cites.
+
+### Step C.1: Pre-Work (runnable before the amended appendix lands)
+
+1. **Extract the chronological index from the current appendix
+   volumes.** TypeLaw-compiled PDFs carry this index at the front
+   of Volume 1: every document with tab number, name, date, volume,
+   and starting page. Derive each document's ending page by
+   subtracting one from the next tab's starting page.
+2. **Extract the citation inventory from the current brief.** All
+   `(N-AA-M)` / `(N-AA-M-P)` patterns (or `PA` equivalents) with
+   surrounding context. Normalize PDF-text artifacts where digits
+   may have been split by spaces (e.g., `2-AA-49 2` → `2-AA-492`).
+   For each cite, identify which document it falls in and the
+   within-document offset.
+3. **Flag for human review:** placeholder gaps (`___` markers left
+   for cites not yet filled in) and any cite whose range crosses a
+   tab boundary in the current appendix — almost always a typo to
+   fix before remapping, not a real spanning cite.
+
+### Step C.2: Rebuild (triggered when the amended appendix lands)
+
+4. **Extract the new appendix's chronological index.** Match
+   documents across versions by name (fuzzy-match for renames) and
+   date. New documents get new tabs.
+5. **Build the mapping table.** For each old document, capture its
+   old vol/page range and new vol/page range. Volume boundaries may
+   shift — going from 2 volumes to 3–4 is common when substantial
+   new material is added.
+6. **Apply the offset formula** to every cite in the brief:
+   `new_page = new_doc_start + (old_page - old_doc_start)`.
+   Translate the volume number based on which volume contains the
+   new page.
+7. **Produce a tracked-changes redline** of the brief (.docx) with
+   all cite updates, using the same Phase B conversion engine.
+   Editor as the tracked-change author, per `claude.md`.
+8. **Separate analytical pass for new cites:** walk the Statement
+   of the Case and any party-specific argument sections to identify
+   where additional record support is needed for newly added
+   material — this is a substantive read, not a mechanical one.
+
+### When this comes up
+
+Not a one-off pattern — recurs whenever a scope error is caught
+late in briefing, the court orders additional record material
+included, co-counsel adds a new theory requiring new record
+support, or a motion to augment the record is granted. Save the
+Step C.1 citation inventory as a CSV with context so the team can
+review and verify before the Step C.2 redline pass runs.
 
 ## Special Cases
 

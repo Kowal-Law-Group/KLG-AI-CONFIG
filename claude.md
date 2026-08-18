@@ -230,6 +230,18 @@ output a brief "Citation Check Needed" callout at the end.
 
   disposition.
 
+- No new heading unless the analysis exceeds approximately two
+
+  pages or a distinct analytical step warrants separation. Do not
+
+  spawn a heading for every minor sub-point — KLG voice is denser
+
+  prose with disciplined heading usage; a judge should encounter a
+
+  heading when the analytical level genuinely shifts, not every two
+
+  paragraphs.
+
 ### Memo Structure (Non-Brief)
 
 - Start with a two- to three-sentence answer up front.

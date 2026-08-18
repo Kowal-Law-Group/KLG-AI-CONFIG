@@ -185,6 +185,13 @@ These apply whenever this skill produces or modifies brief text:
   it for restructuring: the thesis belongs up front, with
   subsections developing it rather than introducing it for the
   first time.
+- **Subheading discipline:** During the elevation pass, check every
+  subheading against the claude.md rule — no new heading unless the
+  analysis exceeds roughly two pages or a distinct analytical step
+  warrants separation. Where a subheading was spawned for a minor
+  sub-point that doesn't meet that bar, merge the segment back into
+  running prose as a tracked change, so the attorney can review and
+  accept or reject the merge rather than have it silently applied.
 
 ## Mode Selection — Cowork Default
 

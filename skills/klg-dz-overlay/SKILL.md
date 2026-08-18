@@ -96,6 +96,36 @@ NOT create a separate project.
 
 ## Workflow
 
+### Phase 0 — Three Gating Questions
+
+Answer these three before any merits deep-dive or hours estimate,
+for every DZ-sourced potential matter. Keep each answer pitch-length
+— this is a framing gate, not a memo.
+
+1. **What is the case about?** The 30-second elevator pitch, and
+   why the client is right on the law and the equities. Just the
+   pitch, not a full assessment.
+2. **What is David (or trial counsel) asking?** What specific
+   problem are they dealing with right now, and what is their idea
+   for addressing it?
+3. **Does this project risk trapping Tim into a Tim-only
+   representation?** Tim is the alpha lion of the firm — he can't
+   spend his time chasing squirrels; he has to bring home big game
+   to keep the team fed. Assess whether this matter is delegable to
+   the team and scales into something substantial (an appeal, a
+   repeat referral stream, precedent-setting work), or whether it
+   locks Tim personally into low-leverage solo effort. Give a clear
+   read: gazelle or squirrel, and whether the work is delegable.
+
+Billing data backs Question 3's premise: Tim's personal time on DZ
+matters rose from roughly 15% of his hours (2025) to roughly 27%
+(2026), while DZ's share of firm revenue held flat around 15–16%.
+The work is becoming less delegable, not more — that divergence
+(rising Tim-hours per unit of revenue) is exactly the signal this
+question screens for.
+
+Present the three answers together before moving to Phase 1.
+
 ### Phase 1 — Tier Classification
 
 Apply the rubric in `references/dz-tier-rubric.md`. The two-tier

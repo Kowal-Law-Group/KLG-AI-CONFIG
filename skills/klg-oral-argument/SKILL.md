@@ -307,7 +307,34 @@ these sections:
 9. **Close-Out Toolkit** — three likely opening questions,
    three crisp answers, 20-second closing
 
-**Step B.4: Deliver.**
+**Step B.4: Fresh-authority scan.**
+
+California's rule 8.254 letter of additional authority requires
+the authority be genuinely new — unlike federal practice, where
+any additional authority can be lodged regardless of age. Missing
+that distinction cost a real argument: at Palmieri v. Foondos
+(Third District, June 15, 2026), a Rule 8.254 letter was denied
+because the cited authority wasn't new, while a March 2026 opinion
+on point that would have qualified went unsurfaced.
+
+For each issue in the Argument Inventory and Vulnerability
+Inventory (Step B.3), run a targeted search for authority decided
+in the last 6–12 months on that issue. For anything genuinely new:
+
+1. Flag it in the argument map under the relevant issue, noting
+   why it's new (decision date) and what it adds.
+2. Draft a Rule 8.254 letter of additional authority for
+   attorney review — do not file anything; this is a draft only.
+3. If a candidate authority isn't clearly new, say so rather than
+   drafting a letter that risks the same denial as Palmieri —
+   flag it as "found but not clearly within the new-authority
+   window" and let the attorney decide.
+
+Confirm with the attorney whether an 8.254 letter is proper here
+before drafting one — the new-authority requirement is California
+practice; don't assume it carries over from a federal-court habit.
+
+**Step B.5: Deliver.**
 
 Default deliverable is a Notion page. Before posting, ask:
 
