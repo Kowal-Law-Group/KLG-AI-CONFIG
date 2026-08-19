@@ -5,6 +5,29 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.11.0] — 2026-08-19
+
+### Added — table of contents on multi-section Notion pages (delegation-batch Task #10)
+- claude.md — new subsection "Table of Contents on Multi-Section Notion
+  Pages" under "Output Requirements (Default)," placed right after
+  "Iterative Work Product — Notion First"'s closing "Exception" paragraph
+  and before "Quality Controls." Rule: insert a table-of-contents block
+  near the top of any Notion page with 3+ distinct heading sections —
+  after any intro callout/header, before the first section heading. Skip
+  it on 1–2 section pages. Individual skills may override placement or
+  the section-count threshold in their own SKILL.md.
+- Syntax correction: the backlog entry guessed `[toc]` bracket syntax but
+  flagged its own uncertainty ("verify against current Notion MCP
+  enhanced markdown spec at implementation time — syntax may vary").
+  Fetched the actual `notion://docs/enhanced-markdown-spec` resource and
+  confirmed the correct block is `<table_of_contents color?="Color"/>` —
+  `[toc]` does not render. The rule as written uses the verified syntax
+  and calls out the `[toc]` form as wrong, so a future editor doesn't
+  reintroduce it.
+- claude.md-only per the entry's own scope — no per-skill edits needed;
+  Notion-writing skills inherit this from claude.md rather than
+  restating formatting rules locally.
+
 ## [0.10.0] — 2026-08-19
 
 ### Added — fetch-patch-verify protocol (delegation-batch Task #9)

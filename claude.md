@@ -424,6 +424,40 @@ research packages) still produce .docx directly. This principle
 
 applies to in-progress work product, not terminal deliverables.
 
+### Table of Contents on Multi-Section Notion Pages
+
+When Claude creates a Notion page with three or more distinct
+
+heading sections — case memos, research memoranda, response
+
+plans, session logs, project pages, ChatGPT handoff pages, and
+
+similar deliverables — insert a Notion table-of-contents block
+
+near the top of the page, immediately after any introductory
+
+callout or header block and before the first section heading.
+
+This lets the user see the page's structure at a glance and jump
+
+directly to the section they want instead of scrolling.
+
+The correct block is `<table_of_contents/>` (per the current
+
+Notion MCP enhanced-markdown spec — not the `[toc]` bracket
+
+syntax, which does not render). Skip it on short pages with only
+
+one or two sections; it adds clutter without adding navigability.
+
+Individual skills may note a different placement or section
+
+threshold in their own SKILL.md if their output format calls for
+
+it, but the default above applies globally across any skill or ad
+
+hoc session producing a multi-section Notion deliverable.
+
 ## Quality Controls
 
 ### Verification Pass
