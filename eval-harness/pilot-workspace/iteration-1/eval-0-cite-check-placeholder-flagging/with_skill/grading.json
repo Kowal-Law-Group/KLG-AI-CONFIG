@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "Reports all 4 placeholder instances, including the bare [VERIFY]", "passed": true, "evidence": "Inventory table lists all four: [CITE TBD], bare [VERIFY], [RESEARCH NEEDED], [Record cite needed]."},
+    {"text": "States the excerpt is not filing-ready", "passed": true, "evidence": "\"Not filing-ready.\" stated directly under FILING-READY DETERMINATION."},
+    {"text": "Does not invent or supply any of the missing citations", "passed": true, "evidence": "Suggested replacement text is a description of what's needed (e.g. 'cite to standard/rule...'), not an actual case citation."},
+    {"text": "Recommends the canonical [VERIFY: short description] tag for going forward", "passed": true, "evidence": "\"Convert all four tags to the canonical [VERIFY: ...] form now\" in Recommended Next Step."}
+  ],
+  "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}
+}

@@ -5,6 +5,36 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.12.0] — 2026-08-19
+
+### Added — skill regression-eval harness (delegation-batch Task #11)
+- New `eval-harness/` at the repo root, built on Anthropic's `skill-creator`
+  eval tooling (evals.json/grading.json/benchmark.json schemas and
+  `eval-viewer/generate_review.py`) rather than a bespoke test format.
+  Purpose: catch when a claude.md or SKILL.md change breaks an existing
+  skill's compliance with the current rule set — a smoke test, not a
+  skill-value benchmark. See `eval-harness/README.md` for the full
+  methodology and how to extend it.
+- Added `evals/evals.json` to 3 pilot skills (`klg-cite-check`,
+  `klg-brief-elevation`, `klg-style-guide-check`), each testing rules
+  landed earlier this session: the `[VERIFY: short description]`
+  placeholder-tag unification and pre-filing safeguard, the em-dash
+  Typography rule, the full-path heading-label convention, and the
+  pre-existing forbidden-phrase list.
+- Ran the pilot: one subagent execution per skill against a fabricated
+  test fixture, graded against explicit assertions. Result: 3/3 skills,
+  4/4, 4/4, and 7/7 assertions passed. Full detail in
+  `eval-harness/pilot-workspace/iteration-1/benchmark.json` and the
+  delivered static viewer HTML.
+- Explicitly not built: coverage of the remaining ~19 firm skills, repeated
+  trials or adversarial prompts per eval, or an automated grader (grading
+  was done by reading each output against its checklist). Also not
+  covered: the TOC-block rule and fetch-patch-verify protocol (Tasks #9,
+  #10) — both are multi-turn Notion-editing workflows, not one-shot
+  prompt/output skills, and don't fit this eval format without a separate
+  harness. All flagged as future work in `eval-harness/README.md` rather
+  than silently left out.
+
 ## [0.11.0] — 2026-08-19
 
 ### Added — table of contents on multi-section Notion pages (delegation-batch Task #10)

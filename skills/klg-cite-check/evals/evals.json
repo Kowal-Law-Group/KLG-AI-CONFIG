@@ -1,0 +1,19 @@
+{
+  "skill_name": "klg-cite-check",
+  "evals": [
+    {
+      "id": 0,
+      "name": "placeholder-flagging",
+      "prompt": "Run a cite-check placeholder scan on a brief excerpt containing four legacy-style placeholder tags ([CITE TBD], bare [VERIFY], [RESEARCH NEEDED], [Record cite needed]) and report what is found.",
+      "expected_output": "Identifies all four placeholders (including the bare, malformed [VERIFY]), does not fabricate any of the missing citations, states plainly that the excerpt is not filing-ready, and recommends normalizing to the canonical `[VERIFY: short description]` tag.",
+      "files": [],
+      "expectations": [
+        "Reports all 4 placeholder instances, including the bare [VERIFY]",
+        "States the excerpt is not filing-ready",
+        "Does not invent or supply any of the missing citations",
+        "Recommends the canonical [VERIFY: short description] tag for going forward"
+      ]
+    }
+  ],
+  "notes": "Pilot regression eval added 2026-08-19 (delegation-batch Task #11) to test the placeholder-tag unification landed in claude.md v0.9.0 and this skill's own Step A.3 rewrite. Test fixture uses fabricated brief text — not a real matter."
+}

@@ -1,0 +1,12 @@
+{
+  "expectations": [
+    {"text": "Flags 'furthermore' as prohibited", "passed": true, "evidence": "Row 1 of Issues Found table."},
+    {"text": "Flags 'it is well established that' as prohibited", "passed": true, "evidence": "Row 2 of Issues Found table."},
+    {"text": "Flags 'as such' as prohibited", "passed": true, "evidence": "Row 3, with replacement suggestion \"So\"."},
+    {"text": "Flags 'therefore' as prohibited", "passed": true, "evidence": "Row 5 of Issues Found table."},
+    {"text": "Flags the doubled modifier 'clearly and unambiguously'", "passed": true, "evidence": "Row 4, labeled doubled modifier / prohibited word."},
+    {"text": "Flags and fixes the spaced em dash", "passed": true, "evidence": "Row 6 flags it; corrected version restructures into two sentences with no em dash."},
+    {"text": "The corrected version contains none of the above issues", "passed": true, "evidence": "\"The agency's determination was arbitrary. So the panel must reverse and remand.\" — none of the six flagged issues remain."}
+  ],
+  "summary": {"passed": 7, "failed": 0, "total": 7, "pass_rate": 1.0}
+}

@@ -1,0 +1,19 @@
+{
+  "skill_name": "klg-brief-elevation",
+  "evals": [
+    {
+      "id": 0,
+      "name": "typography-and-heading-labels",
+      "prompt": "Elevate a two-line passage containing a spaced em dash, a doubled modifier ('plainly and unambiguously'), and bare heading enumerators ('1.' / 'A.') instead of full-path labels.",
+      "expected_output": "Removes the spaced em dash, cuts the doubled modifier, and relabels the headings to the full-path convention (e.g. 'I.' and 'I.A.' rather than bare '1.'/'A.').",
+      "files": [],
+      "expectations": [
+        "No spaced em dashes ( — ) appear anywhere in the output",
+        "Heading labels use the full-path convention, not a bare enumerator",
+        "The doubled modifier is cut rather than left in place",
+        "Active-verb phrasing is preserved or improved"
+      ]
+    }
+  ],
+  "notes": "Pilot regression eval added 2026-08-19 (delegation-batch Task #11) to test the Typography (em dash) and full-path heading-label rules landed in claude.md v0.9.0 (Task #8)."
+}

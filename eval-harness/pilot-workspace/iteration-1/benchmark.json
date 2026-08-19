@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "skill_name": "KLG rule-regression pilot (klg-cite-check, klg-brief-elevation, klg-style-guide-check)",
+    "skill_path": "/tmp/klg-ai-config/skills",
+    "executor_model": "claude-sonnet-5",
+    "analyzer_model": "claude-sonnet-5",
+    "timestamp": "2026-08-19T00:00:00Z",
+    "evals_run": [0, 1, 2],
+    "runs_per_configuration": 1,
+    "note": "Regression pilot, not a skill-value benchmark. Only with_skill runs exist — there is no without_skill baseline, because the point of this harness is 'does the skill currently comply with the current claude.md rule set,' not 'does the skill outperform no skill.' Pass rate here means rule-compliance rate."
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "placeholder-flagging",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 29.3, "tokens": 76444, "tool_calls": 2, "errors": 0},
+      "expectations": [
+        {"text": "Reports all 4 placeholder instances, including the bare [VERIFY]", "passed": true, "evidence": "Inventory table lists all four."},
+        {"text": "States the excerpt is not filing-ready", "passed": true, "evidence": "\"Not filing-ready.\" stated directly."},
+        {"text": "Does not invent or supply any of the missing citations", "passed": true, "evidence": "Replacement text describes what's needed, not an actual citation."},
+        {"text": "Recommends the canonical [VERIFY: short description] tag for going forward", "passed": true, "evidence": "Recommended Next Step section."}
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "typography-and-heading-labels",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 48.5, "tokens": 88727, "tool_calls": 2, "errors": 0},
+      "expectations": [
+        {"text": "No spaced em dashes ( — ) appear anywhere in the output", "passed": true, "evidence": "No ' — ' in output.md."},
+        {"text": "Heading labels use the full-path convention, not a bare enumerator", "passed": true, "evidence": "\"I.\" and \"I.A.\""},
+        {"text": "The doubled modifier is cut rather than left in place", "passed": true, "evidence": "\"Plainly and unambiguously\" removed."},
+        {"text": "Active-verb phrasing is preserved or improved", "passed": true, "evidence": "Active voice retained throughout."}
+      ],
+      "notes": ["Model flagged its own uncertainty about whether \"I.\" is the correct top-level designation without seeing the surrounding brief — an honest scope caveat, not a defect."]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "forbidden-phrases-and-em-dash",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {"pass_rate": 1.0, "passed": 7, "failed": 0, "total": 7, "time_seconds": 36.4, "tokens": 76797, "tool_calls": 2, "errors": 0},
+      "expectations": [
+        {"text": "Flags 'furthermore' as prohibited", "passed": true, "evidence": "Issues table row 1."},
+        {"text": "Flags 'it is well established that' as prohibited", "passed": true, "evidence": "Issues table row 2."},
+        {"text": "Flags 'as such' as prohibited", "passed": true, "evidence": "Issues table row 3."},
+        {"text": "Flags 'therefore' as prohibited", "passed": true, "evidence": "Issues table row 5."},
+        {"text": "Flags the doubled modifier 'clearly and unambiguously'", "passed": true, "evidence": "Issues table row 4."},
+        {"text": "Flags and fixes the spaced em dash", "passed": true, "evidence": "Issues table row 6; corrected version has no em dash."},
+        {"text": "The corrected version contains none of the above issues", "passed": true, "evidence": "Final corrected sentence is clean of all six flagged issues."}
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0},
+      "time_seconds": {"mean": 38.07, "stddev": 9.72, "min": 29.3, "max": 48.5},
+      "tokens": {"mean": 80656, "stddev": 6675, "min": 76444, "max": 88727}
+    }
+  },
+  "notes": [
+    "All 3 pilot skills passed every assertion tied to this session's rule changes (Task #8 em-dash + heading-label rules, Task #9's own placeholder-tag unification) on a single fabricated-fixture prompt each.",
+    "Sample size is 1 run per eval, no repeated trials and no without_skill baseline — this is a compliance smoke test, not a statistically powered benchmark. Treat a 100% pass rate as 'no regression detected on this prompt,' not as proof the rule is unbreakable under harder inputs.",
+    "Grading was done by a human-readable checklist read against each output, not by a separate automated grader subagent or a script — consistent with this session's practice of not overclaiming validation rigor it didn't actually run.",
+    "Not covered by this pilot: the TOC-block rule and the fetch-patch-verify protocol (Tasks #9 and #10). Both are Notion-editing-workflow rules rather than one-shot prose-output rules, so they don't fit this single-prompt eval format well — spot-check those directly in a live Notion session instead."
+  ]
+}

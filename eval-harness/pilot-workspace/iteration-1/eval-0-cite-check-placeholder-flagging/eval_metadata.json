@@ -1,0 +1,12 @@
+{
+  "eval_id": 0,
+  "eval_name": "placeholder-flagging",
+  "skill_name": "klg-cite-check",
+  "prompt": "Run a cite-check placeholder scan on a brief excerpt containing four legacy-style placeholder tags ([CITE TBD], bare [VERIFY], [RESEARCH NEEDED], [Record cite needed]) and report what is found.",
+  "assertions": [
+    "Reports all 4 placeholder instances, including the bare [VERIFY]",
+    "States the excerpt is not filing-ready",
+    "Does not invent or supply any of the missing citations",
+    "Recommends the canonical [VERIFY: short description] tag for going forward"
+  ]
+}

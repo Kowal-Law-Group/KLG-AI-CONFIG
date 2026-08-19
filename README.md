@@ -24,6 +24,8 @@ klg-context.md                 Firm/team/matter context file (STATUS: still a pl
 klg-skill-navigator-final.md   Skill Navigator data (seeded from a 2026-03-16 Notion export — STALE, see note in file)
 klg-shared-scripts/            Shared utility scripts (fix_docx_standalone.py, etc.)
 skills/<skill-name>/SKILL.md   One folder per KLG-authored skill
+skills/<skill-name>/evals/     Regression-eval prompts for that skill, where they exist (see eval-harness/)
+eval-harness/                  Skill regression-test harness + run results (Task #11, see eval-harness/README.md)
 CHANGELOG.md                   Dated, human-readable change log
 VERSIONING.md                  Semantic versioning convention for this repo
 ```

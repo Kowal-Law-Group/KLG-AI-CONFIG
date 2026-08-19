@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "No spaced em dashes ( — ) appear anywhere in the output", "passed": true, "evidence": "Grep of output.md for ' — ' finds no matches; the dash-joined clause was restructured away entirely."},
+    {"text": "Heading labels use the full-path convention, not a bare enumerator", "passed": true, "evidence": "\"1.\" became \"I.\" and \"A.\" became \"I.A.\""},
+    {"text": "The doubled modifier is cut rather than left in place", "passed": true, "evidence": "\"Plainly and unambiguously\" removed; output explains the cut explicitly."},
+    {"text": "Active-verb phrasing is preserved or improved", "passed": true, "evidence": "\"The trial court erred by excluding the evidence\" keeps active voice; \"was not harmless\" kept deliberately as the term of art, with reasoning given."}
+  ],
+  "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}
+}

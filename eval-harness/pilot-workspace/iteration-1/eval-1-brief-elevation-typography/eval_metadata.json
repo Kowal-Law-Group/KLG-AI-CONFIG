@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "typography-and-heading-labels",
+  "skill_name": "klg-brief-elevation",
+  "prompt": "Elevate a two-line passage containing a spaced em dash, a doubled modifier ('plainly and unambiguously'), and bare heading enumerators ('1.' / 'A.') instead of full-path labels.",
+  "assertions": [
+    "No spaced em dashes ( — ) appear anywhere in the output",
+    "Heading labels use the full-path convention, not a bare enumerator",
+    "The doubled modifier is cut rather than left in place",
+    "Active-verb phrasing is preserved or improved"
+  ]
+}

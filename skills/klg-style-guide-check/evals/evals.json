@@ -1,0 +1,22 @@
+{
+  "skill_name": "klg-style-guide-check",
+  "evals": [
+    {
+      "id": 0,
+      "name": "forbidden-phrases-and-em-dash",
+      "prompt": "Run a style-guide check on a sentence stacking four banned stock phrases (furthermore, it is well established that, as such, therefore), a doubled modifier (clearly and unambiguously), a spaced em dash, and a passive construction.",
+      "expected_output": "Flags every banned phrase and the doubled modifier by name, fixes the em-dash spacing, and returns a corrected version with none of the flagged issues present.",
+      "files": [],
+      "expectations": [
+        "Flags 'furthermore' as prohibited",
+        "Flags 'it is well established that' as prohibited",
+        "Flags 'as such' as prohibited",
+        "Flags 'therefore' as prohibited",
+        "Flags the doubled modifier 'clearly and unambiguously'",
+        "Flags and fixes the spaced em dash",
+        "The corrected version contains none of the above issues"
+      ]
+    }
+  ],
+  "notes": "Pilot regression eval added 2026-08-19 (delegation-batch Task #11) to test the pre-existing forbidden-phrase list and the new em-dash Typography rule (claude.md v0.9.0, Task #8) together, since this skill is the one meant to enforce both."
+}

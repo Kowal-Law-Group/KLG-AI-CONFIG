@@ -1,0 +1,15 @@
+{
+  "eval_id": 2,
+  "eval_name": "forbidden-phrases-and-em-dash",
+  "skill_name": "klg-style-guide-check",
+  "prompt": "Run a style-guide check on a sentence stacking four banned stock phrases (furthermore, it is well established that, as such, therefore), a doubled modifier (clearly and unambiguously), a spaced em dash, and a passive construction.",
+  "assertions": [
+    "Flags 'furthermore' as prohibited",
+    "Flags 'it is well established that' as prohibited",
+    "Flags 'as such' as prohibited",
+    "Flags 'therefore' as prohibited",
+    "Flags the doubled modifier 'clearly and unambiguously'",
+    "Flags and fixes the spaced em dash",
+    "The corrected version contains none of the above issues"
+  ]
+}
