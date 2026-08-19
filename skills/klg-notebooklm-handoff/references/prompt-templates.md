@@ -112,15 +112,15 @@ Provide a structured digest of [SOURCE CATEGORY]. Organize as:
     or corroborate other sources in the notebook.
 
 [OPTIONAL — for transcripts and depositions, add:]
-(7) [CITE TBD] resolution — for each [CITE TBD] flag in the
+(7) `[VERIFY: ...]` resolution — for each `[VERIFY: ...]` flag in the
     working draft that points to this source generically, identify
     the specific page and line that supports the cited proposition.
 
 [OPTIONAL — for the Court of Appeal opinion, add:]
-(7) Page citations to anchor [VERIFY] flag resolution — for each
+(7) Page citations to anchor `[VERIFY: ...]` flag resolution — for each
     of the following propositions in the working draft, identify
     the actual page in the opinion that supports it: [LIST OF
-    [VERIFY]-flagged propositions]
+    `[VERIFY: ...]`-FLAGGED PROPOSITIONS]
 
 Use specific citations throughout (page:line for transcripts,
 volume.page for depositions, page or paragraph for opinions and
@@ -200,11 +200,7 @@ specific page or page/line citation. For each:
 (c) Provide the exact quote from the source.
 (d) Recommend the precise citation format.
 
-Also resolve every [CITE TBD] flag in the working draft — list
-each, identify what it is meant to support, and provide the
-specific source citation that resolves it.
-
-Also resolve every [VERIFY] flag in the working draft. For each,
+Also resolve every `[VERIFY: ...]` flag in the working draft. For each,
 quote the proposition the brief asserts and identify the specific
 page in [WHATEVER OPINION OR DOCUMENT THE FLAGS POINT TO] that
 supports it.

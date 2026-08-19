@@ -874,9 +874,11 @@ recommendations to start with.]
    Citations in California Style Manual format for CA authorities,
    Bluebook for federal.
 
-6. Never fabricate case citations. Use [VERIFY] for uncertain
-   citations and [RESEARCH NEEDED] for legal principles that
-   need authority support.
+6. Never fabricate case citations. Flag anything needing human
+   follow-up — an uncertain citation, a legal principle that needs
+   authority support — with the single uniform tag
+   `[VERIFY: short description]` per claude.md's placeholder
+   standard. No other lead word.
 
 7. Record citations: use REF format, appendix format, or
    document-name format per claude.md. Insert [Record cite

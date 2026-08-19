@@ -190,6 +190,32 @@ output a brief "Citation Check Needed" callout at the end.
 
 - Do not include hyperlinks in draft brief language.
 
+### Typography
+
+- Em dashes: no flanking spaces. Write "the verdict—which was
+
+  reversed—was" not "the verdict — which was reversed — was." This
+
+  is a recurring failure mode — the more common typographic
+
+  convention from training data pulls the other way, so treat this
+
+  as a mandatory final-pass check on every text-heavy output, not a
+
+  one-time formatting choice. Skills that produce significant prose
+
+  (klg-case-assessment, klg-response-plan, klg-brief-elevation,
+
+  klg-style-guide-check, and any ad hoc client communication) must
+
+  scan their own draft for spaced em dashes before delivery.
+
+- See Style Checks below for the other recurring typographic rules
+
+  (single space after periods, no superscript in reporter
+
+  citations, no ALL CAPS).
+
 ### Brief Argument Structure
 
 - The heart of a section goes up front, not buried in a subsection.
@@ -448,7 +474,19 @@ applies to in-progress work product, not terminal deliverables.
 
   higher-level heading. Example: A.1, A.2, B.1, B.2 — not
 
-  A.1, A.2, B.3, B.4.
+  A.1, A.2, B.3, B.4. Give each heading label the full path of its
+
+  parents, so a reader who drops in mid-brief always knows which
+
+  higher-level part they are under. Major parts take Roman numerals
+
+  (I, II, III); first-level subsections carry the part number (II.A,
+
+  II.B); deeper subsections carry the full path (II.A.1, II.A.2) —
+
+  not a bare "A." or "1." This matches the format used for internal
+
+  cross-references ("see part V.A.1").
 
 - Body text: Body Text style. No orphan headings or paragraphs.
 
@@ -508,11 +546,27 @@ applies to in-progress work product, not terminal deliverables.
 
 - Never assume facts not in the record.
 
-- If you cannot find a Bates/REF number, write [CITE TBD] and flag
+- Flag anything that needs human follow-up — a missing Bates/REF
 
-  for human review.
+  number, a possibly hallucinated citation, a needed record pincite,
 
-- If a citation may be hallucinated, flag it with [VERIFY].
+  added context that needs confirming — with one uniform tag:
+
+  `[VERIFY: short description of what needs checking]`. Always
+
+  `VERIFY` in all caps inside square brackets, always followed by a
+
+  colon and a short description. Never a bare `[VERIFY]` with no
+
+  description, and never a different lead word (no `[CITE TBD]`,
+
+  `[CHECK]`, `[TK]`, `[ADD CONTEXT]`, `[CONFIRM]`, `[RESEARCH
+
+  NEEDED]`, `[Record cite needed]`, etc.). One search term —
+
+  "VERIFY" — must reliably find every flagged item in any KLG draft,
+
+  regardless of what kind of gap it flags.
 
 - Do not give legal advice to potential clients. Internal work product
 
@@ -3514,7 +3568,7 @@ When this task is complete:
 
    Please review and integrate."
 
-3. Claude reads output, checks [VERIFY] flags, applies KLG
+3. Claude reads output, checks [VERIFY: ...] flags, applies KLG
 
    formatting, and integrates into the active workflow.
 
@@ -3562,7 +3616,7 @@ URL:
 
 1. **Read the Output section** of the handoff page.
 
-2. **Check for [VERIFY] flags** — run web searches or check
+2. **Check for [VERIFY: ...] flags** — run web searches or check
 
    against known authorities for any flagged citations.
 

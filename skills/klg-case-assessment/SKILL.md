@@ -532,14 +532,18 @@ and formatting as the initial assessment.
 3. Never rate an issue without citing specific record pages and
    explaining the reasoning.
 4. When in doubt, rate conservatively (Yellow, not Green).
-5. Flag every [CITE TBD] and [VERIFY] item. Collect them in a
-   summary list at the end under Open Items.
+5. Flag every follow-up item — missing Bates/REF number, uncertain
+   citation, or anything else needing human review — with the
+   single uniform tag `[VERIFY: short description]` per claude.md's
+   placeholder standard. Collect them in a summary list at the end
+   under Open Items.
 6. If the record is incomplete, say so explicitly and identify
    what's missing and how it would affect the analysis.
 7. Do not invent or assume facts not in the record.
 8. Do not fabricate case citations. If you believe a legal
    principle applies but cannot identify the specific authority,
-   write [RESEARCH NEEDED] and describe the principle.
+   write `[VERIFY: research needed — description of principle]`
+   per claude.md's uniform placeholder standard.
 9. Target length: 2,000–4,000 words depending on complexity.
    The executive summary should be capped at ~150 words.
 10. Apply the KLG Style Guide throughout: write like a normal

@@ -864,10 +864,12 @@ project page, whichever the accounts handoff pattern already uses.
 
 1. Read all uploaded documents completely before writing anything.
 2. For case citations: provide full citations with pincites. Quote
-   accurately. Flag uncertainty with [VERIFY]. Do not fabricate
-   authority. If you believe a legal principle applies but cannot
-   identify the specific authority, write [RESEARCH NEEDED] and
-   describe the principle.
+   accurately. Flag anything needing human follow-up — an uncertain
+   citation, a legal principle that applies but lacks an identified
+   authority — with the single uniform tag `[VERIFY: short
+   description]` per claude.md's placeholder standard. Do not
+   fabricate authority, and never use a different lead word (no
+   `[RESEARCH NEEDED]`, `[CHECK]`, etc.).
 3. For record citations: use the record accurately. When the
    appellate record is designated, cite using the standard formats:
    Clerk's Transcript (1-CT-1.), Appellant's Appendix (1-AA-1.),
@@ -876,7 +878,7 @@ project page, whichever the accounts handoff pattern already uses.
    inside the closing parenthesis. If working from pre-record files,
    use REF numbers or document-name format per claude-md-standards.
    If a record citation is needed but not available, insert
-   [Record cite needed].
+   `[VERIFY: record cite needed — description]`.
 4. Use narrative prose by default. Use bullets only for listing
    authorities, evidence, or factors.
 5. Tone: clear, succinct, precise, brief-ready. Confident but not
@@ -888,8 +890,8 @@ project page, whichever the accounts handoff pattern already uses.
    no legalese, active voice, punchy openers.
 8. Target length: 3,000–5,000 words depending on complexity and
    number of issues.
-9. All [VERIFY], [RESEARCH NEEDED], and [Record cite needed] flags
-   must be collected in a summary list under Action Items.
+9. All `[VERIFY: ...]` flags must be collected in a summary list
+   under Action Items.
 10. After delivering the strategy memo AND the workflow pattern
     questions, provide the Cowork-to-Chat offboard instructions
     (see "Cowork-to-Chat Offboard Point" above).
@@ -1093,5 +1095,6 @@ populated:
 - Record cites: (1-CT-1.), (1-AA-1.), (1-RT-1.) — volume-prefix-page,
   no spaces, period inside closing paren.
 - Every factual assertion must cite to the record or source document.
-- Flag uncertainty: [VERIFY], [RESEARCH NEEDED], [Record cite needed].
+- Flag uncertainty with the single uniform tag: `[VERIFY: short
+  description]` — no other lead word.
 - Never fabricate case citations.

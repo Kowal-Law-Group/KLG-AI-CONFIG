@@ -5,6 +5,64 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.9.0] — 2026-08-19
+
+### Added — style-rule batch into klg-style-guide-check (delegation-batch Task #8)
+4 items batched per Task #8's own grouping; one of the 4 turned out to
+already be resolved as a duplicate (see below) rather than needing new work.
+
+- **Em dashes: no flanking spaces** — added a new `### Typography`
+  subsection under Output Requirements in claude.md (the entry's own
+  suggested home). The entry claimed this rule was "already explicitly
+  codified in claude.md" — it was not; grepped the whole file and found
+  no em-dash rule anywhere before this edit. Added fresh rather than
+  "promoted," and flagged that discrepancy rather than assuming the
+  entry's premise. Also flagged, not fixed: claude.md's own prose (as
+  imported from Tim's original docx) uses spaced em dashes pervasively —
+  208 same-line instances plus roughly 18 cross-line instances via the
+  file's one-clause-per-line, blank-line-continued formatting. Fixing
+  that is a mechanical cleanup of the entire file, not part of what this
+  backlog item asked for (encoding the rule going forward), and risks
+  corrupting the file's unusual line-wrap structure if done as a bulk
+  find/replace without care. Left as a flagged, separately schedulable
+  cleanup rather than attempted here.
+- **Full-path heading labels (II.A, II.B, II.A.1)** — augmented the
+  existing "Subheading numbering" bullet in claude.md's Style Checks
+  with the full-path labeling rule, using the entry's own paste-ready
+  text. Did not touch the separate KLG Style Manual .docx (SharePoint,
+  read-only via connector) — same limitation noted in every prior style
+  rule landed this way.
+- **Standardize placeholder format to `[VERIFY: description]`** —
+  replaced `[CITE TBD]` and bare `[VERIFY]` in claude.md's "What You
+  Must Never Do" with the single uniform tag, and normalized every
+  skill-level variant found across the repo: `klg-brief-elevation`,
+  `klg-response-plan` (three separate occurrences — `[VERIFY]`,
+  `[RESEARCH NEEDED]`, `[Record cite needed]` all collapsed to one
+  tag), `klg-case-assessment` (two occurrences), and the three copies
+  of the `klg-notebooklm-handoff`/`klg-research-compilation`/
+  `klg-case-assessment` placeholder reference stub. `klg-cite-check`
+  Step A.3 (Check for Placeholders) keeps detecting the old variants
+  too — a brief may carry legacy or outside-counsel placeholders — but
+  now explicitly ties that search to the pre-filing safeguard the entry
+  asked for: report a literal count/list of every match and don't treat
+  the brief as filing-ready until it's empty or attorney-cleared.
+  `klg-notebooklm-handoff`'s ChatGPT-facing prompt templates updated to
+  match, since the handoff protocol assumes Claude's own drafts now only
+  carry the one tag.
+
+### Verified — duplicate, not new work
+- **Heading-case convention** (["Fix heading-case convention"](https://app.notion.com/p/3860fc06a06c819caed5f527a1b6f483),
+  Task #8's second item) turned out to be the identical fix already
+  landed in v0.6.0 as ["Heading conventions"](https://app.notion.com/p/3b50fc06a06c812c8c8dd08341552670)
+  — same two-part rule (title-case section labels, no period; sentence-
+  case argument headings, with period), confirmed live in claude.md's
+  Style Checks. The one part of this entry not covered by the v0.6.0
+  fix — auditing `klg-brief-assembly`'s heading-style mapping — was
+  checked: the mapping assigns Word styles by markdown heading level
+  (`#`/`##`/`###`) and section identity, not by heading-text casing, and
+  the levels already correspond correctly to the two heading categories.
+  No change needed there.
+
 ## [0.8.0] — 2026-08-18
 
 ### Added — narrow new-skills cluster (Backlog Triage Lane 2)

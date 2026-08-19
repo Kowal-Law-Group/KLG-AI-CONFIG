@@ -120,14 +120,29 @@ For each paragraph in the brief, verify:
 
 ### Step A.3: Check for Placeholders
 
-Search the entire brief for unresolved placeholders:
+Claude's own placeholder standard (per claude.md) is the single
+uniform tag `[VERIFY: short description]` — but a brief in cite
+check may carry legacy tags from before that standard existed, or
+placeholders inserted by co-counsel or outside drafters using their
+own conventions. Search the entire brief broadly, then normalize:
+- `[VERIFY: ...]` — the canonical form; still needs resolving
 - `[RECORD CITE NEEDED]` or variations
-- `[VERIFY]` or `[VERIFY CITE]`
+- `[VERIFY]` or `[VERIFY CITE]` (bare, pre-standardization)
 - `[RESEARCH NEEDED]`
-- `[CITE]` or `[CITE NEEDED]`
+- `[CITE]` or `[CITE NEEDED]` or `[CITE TBD]`
 - `[TBD]` or `[TODO]`
 - `[INSERT]` or `[ADD]`
 - Square brackets containing instructions
+
+This search doubles as the pre-filing safeguard against a repeat of
+the LASSO near-miss (a petition nearly filed with unresolved
+placeholders because a search for "verify" and "cite" alone missed
+placeholders using other terminology). Report a literal count and
+list of every match found, regardless of which variant it uses, and
+do not treat the brief as filing-ready until that list is empty or
+every item has been explicitly cleared by the attorney. When
+recommending fixes, convert any non-canonical variant to
+`[VERIFY: short description]` so future searches only need one term.
 
 ### Step A.4: Check Format Compliance
 

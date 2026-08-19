@@ -9,7 +9,8 @@ This file should define:
 
 - **Citation formats** — REF control number format, document-name-plus-page
   fallback, case citation style (Cal. Style Manual for CA, Bluebook for federal)
-- **Quality controls** — verification standards, [CITE TBD] and [VERIFY]
-  flagging requirements, no-fabrication rules for case citations
+- **Quality controls** — verification standards, the uniform
+  `[VERIFY: short description]` flagging requirement, no-fabrication
+  rules for case citations
 - **AI transparency requirements** — required disclaimers, draft labeling,
   "AI-generated draft — requires attorney review" notice
