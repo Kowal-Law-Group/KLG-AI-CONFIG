@@ -61,7 +61,7 @@ This skill converts citations — it must never fabricate them.
    must come from the mapping table built in Phase B. Never
    invent volume numbers, page numbers, or citation formats.
 2. **If a placeholder cannot be mapped, flag it.** Write
-   `[APPENDIX CITE NOT FOUND — verify manually]` rather than
+   `[VERIFY: appendix cite not found — map manually]` rather than
    guessing.
 3. **Present the mapping table for attorney review** before
    executing any conversions in the document.

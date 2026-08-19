@@ -65,7 +65,7 @@ research memo, or any other source):
    confirmation before inserting them into the brief.
 3. **Never invent or infer citation formats.** If a citation
    cannot be found in the source, flag it as missing rather than
-   guessing. Write `[RECORD CITE NEEDED — not found in source]`
+   guessing. Write `[VERIFY: record cite not found in source]`
    and move on.
 4. **Never fabricate record volume or page numbers.** Formats
    like `(CT 6)` or `(1 CT 10)` must come from an actual source

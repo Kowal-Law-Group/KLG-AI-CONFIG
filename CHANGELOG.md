@@ -5,6 +5,26 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.13.0] — 2026-08-19
+
+### Fixed — two more skills missed by the VERIFY-tag standardization (Task #8 / backlog item "Standardize citation/context placeholder format to [VERIFY: ...]")
+- That backlog item's own implementation notes name `klg-brief-assembly` and
+  `klg-appendix-cites` as target skills alongside the six already fixed in
+  v0.9.0. Rechecking them while confirming skill deployment turned up two
+  more non-canonical placeholder tags that were missed the first pass:
+  - `klg-brief-assembly` — `[RECORD CITE NEEDED — not found in source]`
+    (Citation Integrity, step 3) → `[VERIFY: record cite not found in
+    source]`.
+  - `klg-appendix-cites` — `[APPENDIX CITE NOT FOUND — verify manually]`
+    (Citation Integrity, step 2) → `[VERIFY: appendix cite not found — map
+    manually]`.
+- Both are now on the same canonical tag as the rest of the firm's skills.
+  `klg-appendix-cites`' own placeholder *citation formats* (the `(AA 000
+  filename)`-style pre-compilation markers documented in
+  `references/citation-formats.md`) are a different mechanism — they mark a
+  pending page number, not a human-follow-up flag — and are intentionally
+  untouched.
+
 ## [0.12.0] — 2026-08-19
 
 ### Added — skill regression-eval harness (delegation-batch Task #11)
