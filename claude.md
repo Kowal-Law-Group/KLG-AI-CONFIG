@@ -1456,6 +1456,86 @@ NOT "Claude is one of several editors and humans fill the gaps."
 
 The mental model is "Claude writes; humans review."
 
+### Editing live drafts: fetch-patch-verify
+
+"Humans review" includes editing directly in Notion, not just
+
+commenting. Any edit to a live Notion draft — a page a human may
+
+have touched since Claude last wrote it — follows four steps,
+
+never a blind overwrite from a cached copy:
+
+1. **Fetch first.** Immediately before editing, fetch the live
+
+   page. Never edit from memory or from a copy of the content
+
+   held earlier in the conversation. A human may have edited the
+
+   page directly since Claude last wrote it, and that edit must
+
+   not be silently discarded.
+
+2. **Patch, don't rebuild.** Apply only the specific requested
+
+   changes to the content just fetched. Leave everything else
+
+   exactly as it is — including any human wordsmithing made since
+
+   the last write.
+
+3. **Write surgically by default.** Prefer a targeted edit
+
+   (`update_content`'s search-and-replace, or `insert_content`)
+
+   over a full-page `replace_content`. Reserve `replace_content`
+
+   for cases that genuinely need it — a full rewrite the human
+
+   asked for, or a page structure too tangled for a targeted
+
+   match — and when using it, submit fetched-current-content plus
+
+   the patch, never a reconstruction from a cached copy, so any
+
+   human edits are carried forward rather than dropped.
+
+4. **Verify.** Re-fetch after writing and confirm the intended
+
+   change landed and nothing else moved. Retry on failure rather
+
+   than trusting a blind write — reliability comes from read-back
+
+   confirmation, not from overwriting the whole page to be safe.
+
+**Turn-taking.** Claude writes to a live draft only when handed
+
+the pen — an explicit "apply these edits," "your turn," or
+
+equivalent — never while a human is actively mid-edit on the same
+
+page. Notion writes are last-write-wins, so fetch-first plus
+
+turn-taking together prevent silently colliding with a human's
+
+concurrent edit.
+
+**Caveat on rich block types.** A fetch/`replace_content` round
+
+trip can be lossy on callouts, toggles, columns, and synced
+
+blocks. For heavily formatted pages, prefer true surgical
+
+block-level edits and reserve full-page replace for prose-heavy
+
+drafts. If the page structure is too complex to patch reliably,
+
+say so rather than forcing a full rebuild.
+
+Notion's native page history is the recovery backstop if a write
+
+ever does overwrite something it should not have.
+
 ### Schema design rule (mandatory)
 
 Every property in every Notion database must be writable by

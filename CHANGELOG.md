@@ -5,6 +5,33 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.10.0] — 2026-08-19
+
+### Added — fetch-patch-verify protocol (delegation-batch Task #9)
+- claude.md — new subsection "Editing live drafts: fetch-patch-verify"
+  under "Notion as Claude's Authoring Workspace," placed right after the
+  section's "Claude writes; humans review" framing since this rule is
+  the direct implementation of the "humans review" half of that model.
+  Four-step protocol per the backlog entry: fetch the live page
+  immediately before editing (never edit from a cached copy), patch
+  only the requested change, write surgically by default (`update_content`/
+  `insert_content`) with `replace_content` reserved for genuine full
+  rewrites — and even then built from fetched-current-content, not a
+  reconstruction — then re-fetch to verify the change landed and nothing
+  else moved. Added the turn-taking rule (write only when handed the pen)
+  and the rich-block-type caveat (callouts/toggles/columns/synced blocks
+  can round-trip lossy) from the entry.
+- claude.md-only per the entry's own "Target skill" — no per-skill edits
+  needed, since every Notion-writing skill inherits global claude.md
+  behavior rather than restating tool-usage rules locally.
+- Not run: the entry's own suggested validation ("test update_content/
+  insert_content for reliability, promote to default if reliable").
+  This session's own Notion edits throughout today used `insert_content`
+  and `notion-create-comment` successfully and repeatedly, which is
+  consistent with — but short of — a real reliability test. Wrote the
+  rule to prefer surgical edits by default based on that experience,
+  flagging that a rigorous test wasn't separately run.
+
 ## [0.9.0] — 2026-08-19
 
 ### Added — style-rule batch into klg-style-guide-check (delegation-batch Task #8)
