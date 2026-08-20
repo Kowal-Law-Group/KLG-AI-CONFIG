@@ -5,6 +5,30 @@ SKILL.md files are recorded here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/). See `VERSIONING.md` for the
 version-bump rules.
 
+## [0.14.0] — 2026-08-19
+
+### Fixed — eval-harness misattribution + logged the real gap
+- Edwyn shared KLG's Cowork org-level instructions (a fixed layer set by
+  the org admin, separate from this repo) and asked how they relate to
+  claude.md. Direct comparison surfaced two things:
+  1. A real gap: claude.md has no rule against doubled modifiers, no
+     "no throat-clearing" language, no explicit ban on describing AI
+     output as "file-ready" or "final," and no stated link between
+     `pack.py` and running `fix_docx_standalone.py` — all four exist in
+     the org instructions but not in claude.md. Logged as a new backlog
+     item, "Bring claude.md style rules in line with the firm's Cowork
+     org-level instructions" (Notion, 2026-08-19), rather than editing
+     claude.md unilaterally — this is a rule-content decision for Tim.
+  2. A self-caught error: the skill regression-eval harness pilot
+     (v0.12.0, Task #11) described and graded a "doubled modifier" check
+     as if it tested a claude.md rule. It doesn't — that rule only lives
+     in the Cowork org instructions. Corrected the notes in
+     `skills/klg-brief-elevation/evals/evals.json`,
+     `skills/klg-style-guide-check/evals/evals.json`,
+     `eval-harness/pilot-workspace/iteration-1/benchmark.json`, and
+     `eval-harness/README.md` to state this plainly. The pilot's pass/fail
+     results are unaffected — only the rule attribution was wrong.
+
 ## [0.13.0] — 2026-08-19
 
 ### Fixed — two more skills missed by the VERIFY-tag standardization (Task #8 / backlog item "Standardize citation/context placeholder format to [VERIFY: ...]")

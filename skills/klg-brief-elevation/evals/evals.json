@@ -15,5 +15,5 @@
       ]
     }
   ],
-  "notes": "Pilot regression eval added 2026-08-19 (delegation-batch Task #11) to test the Typography (em dash) and full-path heading-label rules landed in claude.md v0.9.0 (Task #8)."
+  "notes": "Pilot regression eval added 2026-08-19 (delegation-batch Task #11) to test the Typography (em dash) and full-path heading-label rules landed in claude.md v0.9.0 (Task #8). CORRECTION (same day): the 'doubled modifier is cut' expectation does not test a claude.md rule -- claude.md has no doubled-modifier rule today. That rule exists only in KLG's Cowork org-level instructions (a separate layer from this repo). Left in the eval because it's a reasonable style check either way, but tracked as pending claude.md coverage in the backlog item logged 2026-08-19 (\"Bring claude.md style rules in line with the firm's Cowork org-level instructions\")."
 }

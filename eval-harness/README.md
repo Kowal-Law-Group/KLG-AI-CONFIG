@@ -81,6 +81,20 @@ output-out skill produces — they don't fit this eval format without a
 multi-turn Notion-session harness, which is a larger build than this pilot.
 Spot-check those two directly in a live Notion session instead.
 
+**Correction (2026-08-19, same day):** 2 of the 11 assertions in this pilot
+(the "doubled modifier" checks in the klg-brief-elevation and
+klg-style-guide-check evals) were described and graded as if they tested a
+claude.md rule. They don't — claude.md has no doubled-modifier rule.
+That rule exists only in KLG's separate Cowork org-level instructions
+(set in the Cowork admin settings, not in this repo). The pass/fail
+results themselves are unaffected, but the rule attribution was wrong.
+Left the assertions in place since they're a reasonable style check
+either way, and logged a backlog item — "Bring claude.md style rules in
+line with the firm's Cowork org-level instructions" — to close the actual
+gap (doubled modifiers, throat-clearing, the file-ready/final language
+ban, and the fix_docx_standalone.py-after-pack.py step all live in the
+org instructions today but not in claude.md).
+
 ## Extending this
 
 To add a regression eval for a skill:
